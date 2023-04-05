@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Vitrine{% endblock %}
+{% block body %}
+
+
+    <div class='card'>
+        <img class='img_card' src="../assets/img/koalas.JPG" alt="" />
+        <p class='title_vitrine'>{{vitrine.name}}</p>
+        <p class='price_vitrine'>{{vitrine.price}} €</p>
+        {% if vitrine.available %}
+        <p>Vitrine disponible</p>
+        {% else %}
+        <p>Vitrine indisponible</p>
+        {% endif %}
+        
+    </div>
+
+
+
+{% endblock %}
+

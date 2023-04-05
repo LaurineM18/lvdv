@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Prochaine exposition{% endblock %}
+
+{% block body %}
+<div class="page_expo">
+        <h1>Ma prochaine exposition</h1>
+        <div class='expo_container'>
+            <div class='text_expo'>
+                <h3>Salon des Loisirs Créatifs de CESSON (77)</h3>
+                <h3>Le 13 et 14 mai 2023</h3>
+                <p> Retrouvez moi au Salon des Loisirs Créatifs, organisé par <a href="https://www.ville-cesson.fr/2/accueil.htm" target="_blank">la ville de Cesson</a>, un événement incontournable et convivial qui permet de découvrir les œuvres créatives des artistes locaux.
+                    Cette expo-vente qui a lieu chaque année un week-end d’avril ou de mai, met en avant le travail d’une vingtaine de créateurs dans des domaines divers et variés comme la peinture, la couture, les bijoux, l’encadrement, les bougies artisanales, les vitrines miniatures etc…
+                    Entrée gratuite, avec ateliers, tombola et restauration sur place.  </p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21122.577024585244!2d2.609084757843697!3d48.56537882262686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5fad94433f9f5%3A0x40b82c3688c47e0!2sVert-Saint-Denis!5e0!3m2!1sfr!2sfr!4v1673452183378!5m2!1sfr!2sfr"
+                width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <img class='flyer' src="assets/img/FlyerMarcheNoel.jpeg" alt="Flyer" />
+                <p class="caption">Flyer de l'exposition</p>
+            </div>
+
+        </div>
+        <div class='email_container'>
+            <p>Pour restez informé(e) de mes prochaines expositions, laissez-moi votre email :</p>
+            <form class='form_email_container'>
+                <input class='input_email' type="email" placeholder='Votre mail' value='' required />
+                <button class='btn btn_mail' type="submit">Recevoir les prochaines dates d'expositions</button>
+            </form>
+        </div>
+    </div>
+    
+<script src="{{asset('js/exposition.js')}}"></script>
+{% endblock %}
+

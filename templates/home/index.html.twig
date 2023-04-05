@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page d'accueil{% endblock %}
+
+{% block body %}
+    <div class='home_container'>
+        <section class='heroheader'>
+            <div class='bcg_vitrine'>
+            </div>
+            <img class='vitrine' src="assets/img/koalas.jpg" alt="Vitrine Koalas" />
+            <h1 id="title_mobile">Bienvenue dans un univers de miniatures !</h1>
+            <div class="text_heroheader">
+                <h1 id="title_desktop">Bienvenue dans un univers de miniatures !</h1>
+                <p>Passionnée depuis des années, je réalise des petites vitrines qui racontent une histoire sortie de mon imagination.
+                    Ces mises en scène trouvent leur place dans différents écrins : cloche en verre, terrarium, boîte en carton plume faite main ou encore objets chinés et détournés.
+                    Différents thèmes prennent vie dans mes créations en perpétuelle évolution : noël, peinture, couture, voyages, boutiques etc… <br>
+                    Vous trouverez sûrement un thème qui vous enchantera et dans le cas contraire, la personnalisation est possible sur demande, idée de cadeau pour un anniversaire, un événement (mariage, naissance, retraite etc.) ou tout simplement pour faire plaisir. </p>
+                <div class='heroheader_btn_container'>
+                    <button class='btn btn_allVitrines'>
+                        <a href="{{path('app_vitrines')}}">Toutes les vitrines</a>
+                    </button>
+                    <button class='btn btn_personnalisation'>
+                        <a href="">La personnalisation</a>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class='news'>
+            <div class="decoration_up"></div>
+            <div class='infos_news'>
+                <h1>Mes dernières créations</h1>
+                <p>Voici mes toutes dernières créations, pièces uniques inspirées par mes récentes trouvailles ou réalisations de commandes.  </p>
+            </div>
+            <div class="carousel_container">
+                <img class='img-carousel' src="assets/img/koalas.jpg" alt="Vitrine Koalas" />
+                <img class='img-carousel' src="assets/img/BonhommeNeige.JPG" alt="Vitrine Koalas" />
+                <img class='img-carousel' src="assets/img/CerfPrintanier.JPG" alt="Vitrine Koalas" />
+            </div>
+                <button class="carousel-next"><img src="assets/img/chevron-right.png" alt=""></button>
+                <button class="carousel-previous"><img src="assets/img/chevron-left.png" alt=""></button>
+            <button class='btn btn_news'>
+                <a href="">Voir toutes les nouveautés</a>
+            </button>
+            <div class="decoration_down"></div>
+        </section>
+        <section class='expo'>
+            <h1>Ma prochaine exposition</h1>
+            <div class='infos_expo'>
+                <img class='flyer' src="assets/img/FlyerMarcheNoel.jpeg" alt="Flyer" />
+                <div class='text-expo'>
+                    <h2>Salon des Loisirs Créatifs</h2>
+                    <h3>13 et 14 mai 2023 à Cesson (77)</h3>
+                    <p>Cette expo-vente qui a lieu chaque année un week-end d’avril ou de mai, met en avant le travail d’une vingtaine de créateurs dans des domaines divers et variés. N'hésitez pas à venir me rencontrer sur place. Vous pourrez y retrouver mes dernières nouveautés. </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<script src="{{asset('js/index.js')}}"></script>
+{% endblock %}
+

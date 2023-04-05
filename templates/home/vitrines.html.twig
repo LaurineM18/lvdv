@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Toutes les vitrines{% endblock %}
+{% block body %}
+<div class='page_vitrines'>
+    <h1>Les Vitrines</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate placeat fugiat sint illum. Modi,
+            voluptatem esse. Quaerat consectetur nam veniam debitis cupiditate, fugit, assumenda perferendis, corrupti
+            exercitationem modi qui aspernatur!</p>
+    <div class='vitrines_container'>
+
+        <div class='filter_container'>
+            <p>Filtres</p>
+            <div>
+                <input type="checkbox" name="nouveautés" id="">
+                <label for="nouveautés">Nouveautés</label>
+                <p>Format :</p>
+                <input type="checkbox" name="cloche" id="">
+                <label for="cloche">Cloche</label>
+                <input type="checkbox" name="boite" id="">
+                <label for="boite">Boite</label>
+                <input type="checkbox" name="terrarium" id="">
+                <label for="terrarium">Terrarium</label>
+                <input type="checkbox" name="plexi" id="">
+                <label for="plexi">Cube Plexi</label>
+                <p>Thèmes :</p>
+                <select name="theme" id="theme">
+                    <option value="default">Choisir un thème</option>
+                    <option value="noel">Noel</option>
+                    <option value="halloween">Halloween</option>
+                    <option value="animaux">Animaux</option>
+                    <option value="couture">Couture</option>
+                    <option value="printemps">Printemps</option>
+                    <option value="peinture">Peinture</option>
+                    <option value="boutiques">Boutiques</option>
+                    <option value="personnalisation">Personnalisation</option>
+                    <option value="automne">Automne</option>
+                    <option value="voyages">Voyages</option>
+                </select>
+            </div>
+            </div>
+
+        <div class='cards_vitrines_container'>
+            {% for vitrine in vitrines %}
+                <div class='card'>
+                    <img class='img_card' src="/upload/{{vitrine.image}}" alt="" />
+                    <p class='title_vitrine'>{{vitrine.name}}</p>
+                    <p class='price_vitrine'>{{vitrine.price}} €</p>
+                    <button class='btn_detail_vitrine'>
+                        <a href="{{path('app_show_vitrine', {'id': vitrine.id})}}" class="link_detail_vitrine"><img class='eye_png' src='assets/img/eye.png'></img>Voir
+                            la fiche</a>
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

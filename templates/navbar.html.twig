@@ -1,0 +1,41 @@
+<div class="navbar_container sticky navbar_desktop">
+    <div class='logo_container'>
+            <a href="{{ path('app_home') }}"><img class='logo' src='assets/img/LogoFinal.jpg' alt='La Vitrine de Valérie'></img></a>
+    </div>
+    <nav class='navlinks_container'>
+        <a href="{{ path('app_home') }}" class="onglet">Accueil</a>
+        <div class='submenu_container'>
+            <a href="{{ path('app_vitrines') }}" class='submenu-title onglet'>Vitrines</a>
+
+            <div class='submenu'>
+                <a href="" class="onglet">Nouveautés</a>
+                <a href="" class="onglet">Personnalisation</a>
+                <a href="{{ path('app_vitrines') }}" class="onglet">Toutes les vitrines</a>
+            </div>
+        </div>
+        <a href="{{ path('app_expositions') }}" class="onglet">Exposition</a>
+        <a href="{{ path('app_contact') }}" class="onglet">Contact</a>
+        <a href="{{ path('app_faq') }}" class="onglet">FAQ</a>
+    </nav>
+</div>
+
+
+
+<div class="navbar_mobile_container sticky">
+<div class="navbar_mobile">
+    <a href="{{ path('app_home') }}"><img class='logo' src='assets/img/LogoFinal.jpg' alt='La Vitrine de Valérie'></img></a>
+    <div class="menuIcons">
+        <img id="burgerIcon" src="/assets/img/burger.png" alt="">
+        <img id="closeIcon" class="hidden" src="/assets/img/croix.png" alt="">
+
+    </div>
+</div>
+<div class="modal hidden">
+    <a href="{{ path('app_home') }}" class="onglet">Accueil</a>
+    <a href="{{ path('app_vitrines') }}" class="onglet">Vitrines</a>
+    <a href="" class="onglet">Personnalisation</a>
+    <a href="{{ path('app_expositions') }}" class="onglet">Exposition</a>
+    <a href="{{ path('app_contact') }}" class="onglet">Contact</a>
+    <a href="{{ path('app_faq') }}" class="onglet">FAQ</a>
+</div>
+</div>
