@@ -646,22 +646,81 @@ iframe {
     align-items: flex-start;
 }
 
-.dashboard_allvitrines {
-    background-color: aquamarine;
-    width: 100rem;
-    text-align: center;
-    margin-left: 10rem;
+.dashboard_vitrines{
+    margin: 2rem 3rem 0;
 }
 
-
-.dashboard_allvitrines table {
-    background-color: maroon;
-    width: 100%;
-    text-align: center;
+.dashboard_link{
+    font-family: Avenir;
+    font-size: 1.6rem;
+    color: black;
+    text-decoration: underline;
 }
 
-.dashboard_allvitrines th {
-    background-color: antiquewhite;
+.dashboard_vitrines > button{
+    background-color: #ff9784;
+}
+
+.dashboard_vitrines table{
+    font-family: Avenir;
+    margin: 2rem auto;
+    border-collapse: collapse;
+}
+
+.dashboard_vitrines th {
+    background-color: #ff9784;
+    padding: 0.5rem;
+}
+
+.dashboard_vitrines td {
+    padding: 0 1rem;
+}
+
+.dashboard_vitrines th, td {
+    border: 1px solid grey;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    min-width: 6rem;
+}
+
+.dashboard_vitrines th:last-child, td:last-child {
+    border-left: 1px solid grey;
+}
+
+.btn_admin {
+    padding: 1rem 1.4rem;
+    margin: 0.5rem;
+    background-color: rgb(75, 168, 75, 0);
+    border: 1px solid #ffa578;
+}
+
+.btn_admin:hover{
+    transform: scale(1.1);
+}
+
+.btn_admin_show {
+    border: 1px solid grey;
+}
+
+.btn_admin_show a {
+    color: grey;
+}
+
+.btn_admin_edit {
+    border: 1px solid #8B3144;
+}
+
+.btn_admin_edit a {
+    color: #8B3144;
+}
+
+.btn_admin_delete {
+    border: 1px solid red;
+}
+
+.btn_admin_delete a {
+    color: red;
 }
 
 

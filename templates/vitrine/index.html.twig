@@ -3,45 +3,57 @@
 {% block title %}Vitrine index{% endblock %}
 
 {% block body %}
-    <h1>Vitrine index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-
-                <th>New</th>
-                <th>Price</th>
-                <th>Available</th>
-                <th>Description</th>
- 
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for vitrine in vitrines %}
-            <tr>
-                <td>{{ vitrine.id }}</td>
-                <td>{{ vitrine.Name }}</td>
-
-                <td>{{ vitrine.New ? 'Yes' : 'No' }}</td>
-                <td>{{ vitrine.Price }}</td>
-                <td>{{ vitrine.Available ? 'Yes' : 'No' }}</td>
-                <td>{{ vitrine.Description }}</td>
-
-                <td>
-                    <a href="{{ path('app_vitrine_show', {'id': vitrine.id}) }}">show</a>
-                    <a href="{{ path('app_vitrine_edit', {'id': vitrine.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
+    {% for label, messages in app.flashes(['success', 'error']) %}
+        {% for message in messages %}
+            <div class="{{label}}_flash">
+            <p>{{ message }}</p> 
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
+    {% endfor %}
+    <div class="dashboard_vitrines">
+        <a class="dashboard_link" href="{{ path('app_vitrine_new') }}">Retour au tableau de bord</a>
+        <h1>Toutes les Vitrines</h1>
+        <button class="btn"><a href="{{ path('app_vitrine_new') }}">Enregistrer une nouvelle vitrine</a></button>
 
-    <a href="{{ path('app_vitrine_new') }}">Create new</a>
+        <table class="table dashboard_vitrines">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+
+                    <th>Nouveauté ?</th>
+                    <th>Prix</th>
+                    <th>Disponible ?</th>
+                    <th>Description</th>
+    
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for vitrine in vitrines %}
+                <tr>
+                    <td>{{ vitrine.id }}</td>
+                    <td>{{ vitrine.Name }}</td>
+
+                    <td>{{ vitrine.New ? 'Oui' : 'Non' }}</td>
+                    <td>{{ vitrine.Price }} €</td>
+                    <td>{{ vitrine.Available ? 'Oui' : 'Non' }}</td>
+                    <td>{{ vitrine.Description }}</td>
+
+                    <td>
+                        <button class=" btn_admin btn_admin_show"><a href="{{ path('app_vitrine_show', {'id': vitrine.id}) }}">Voir</a></button>
+                        <button class=" btn_admin btn_admin_edit"><a href="{{ path('app_vitrine_edit', {'id': vitrine.id}) }}">Modifier</a></button>
+                        {{ include('vitrine/_delete_form.html.twig') }}
+
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="9">Aucune vitrine trouvée</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    <a class="dashboard_link" href="{{ path('app_vitrine_new') }}">Retour au tableau de bord</a>
+    </div>
 {% endblock %}

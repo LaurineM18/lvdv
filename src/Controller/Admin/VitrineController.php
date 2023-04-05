@@ -38,6 +38,11 @@ class VitrineController extends AbstractController
             $imgService->moveImage($file,$vitrine);
             $vitrineRepository->save($vitrine, true);
 
+            $this->addFlash(
+                'success',
+                'Nouvelle vitrine enregistrée avec succès !'
+            );
+
             return $this->redirectToRoute('app_vitrine_index', [], Response::HTTP_SEE_OTHER);
         }
 

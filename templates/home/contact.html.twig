@@ -5,10 +5,12 @@
 
 {% block body %}
 
-    {% for message in app.flashes('success') %}
-        <div class="success_flash">
-           <p>{{ message }}</p> 
-        </div>
+    {% for label, messages in app.flashes(['success', 'error']) %}
+        {% for message in messages %}
+            <div class="{{label}}_flash">
+            <p>{{ message }}</p> 
+            </div>
+        {% endfor %}
     {% endfor %}
     <div class='contact_container'>
         <div class='coordonnees_container'>
