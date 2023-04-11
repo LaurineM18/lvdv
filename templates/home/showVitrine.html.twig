@@ -8,17 +8,17 @@
     <div class="detail_container">
         <img class='img_detail' src="../assets/img/koalas.JPG" alt="" />
         <div>
-                <h1 class="detail_title_vitrine">{{vitrine.name}}</h1>
+            <h1 class="detail_title_vitrine">{{vitrine.name}}</h1>
             <div>
                 {% if vitrine.available %}
                 <p>Vitrine disponible</p>
                 <p class='detail_price_vitrine'>{{vitrine.price}} €</p>
             </div>
             <div>
-            <p>Intéressé(e) par cette vitrine ?</p>
-             <button class='btn btn_contact'>
-                <a href="{{path('app_vitrines')}}">Contactez-moi</a>
-            </button>
+                <p>Intéressé(e) par cette vitrine ?</p>
+                <button class='btn btn_contact'>
+                    <a href="{{path('app_vitrines')}}">Contactez-moi</a>
+                </button>
             </div>
                 {% else %}
                 <p>Vitrine indisponible</p>
