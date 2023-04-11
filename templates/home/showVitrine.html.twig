@@ -4,18 +4,34 @@
 {% block title %}Vitrine{% endblock %}
 {% block body %}
 
-
-    <div class='card'>
-        <img class='img_card' src="../assets/img/koalas.JPG" alt="" />
-        <p class='title_vitrine'>{{vitrine.name}}</p>
-        <p class='price_vitrine'>{{vitrine.price}} €</p>
-        {% if vitrine.available %}
-        <p>Vitrine disponible</p>
-        {% else %}
-        <p>Vitrine indisponible</p>
-        {% endif %}
-        
+<div class="showdetail_page">
+    <div class="detail_container">
+        <img class='img_detail' src="../assets/img/koalas.JPG" alt="" />
+        <div>
+                <h1 class="detail_title_vitrine">{{vitrine.name}}</h1>
+            <div>
+                {% if vitrine.available %}
+                <p>Vitrine disponible</p>
+                <p class='detail_price_vitrine'>{{vitrine.price}} €</p>
+            </div>
+            <div>
+            <p>Intéressé(e) par cette vitrine ?</p>
+             <button class='btn btn_contact'>
+                <a href="{{path('app_vitrines')}}">Contactez-moi</a>
+            </button>
+            </div>
+                {% else %}
+                <p>Vitrine indisponible</p>
+            </div>
+                {% endif %}
+        </div>
     </div>
+    <button class='btn btn_back'>
+        <a href="{{path('app_vitrines')}}">Retour - Toutes les vitrines</a>
+    </button>
+</div>
+        
+        
 
 
 

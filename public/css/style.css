@@ -453,6 +453,55 @@ img {
     margin-right: 1rem;
 }
 
+/*****1 VITRINE*****/
+.showdetail_page{
+    margin: 6rem;
+}
+.detail_container{
+    display: flex;
+}
+
+.img_detail{
+    width: 50%;
+    margin-right: 2rem;
+    margin-bottom: 4rem;
+}
+
+.detail_title_vitrine{
+    text-align: start;
+    margin: 0 0 2rem;
+}
+
+.detail_container > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.detail_price_vitrine{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.btn_contact{
+    background-color: #ff9784;
+    margin-top: 1rem;
+}
+
+.btn_back{
+    background-color: white;
+    border: 1px solid #ffa578;
+}
+
+.btn_back:hover{
+    background-color: white;
+    border: 1px solid #8B3144;
+}
+
+.btn_back:hover > a{
+    color: #8B3144;
+}
 /*****EXPOSITION*****/
 .page_expo {
     margin: 5rem 6rem;

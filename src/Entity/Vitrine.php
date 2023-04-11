@@ -18,7 +18,6 @@ class Vitrine
     #[ORM\Column(length: 255)]
     private ?string $Name = null;
 
-
     #[ORM\Column]
     private ?bool $New = null;
 
