@@ -737,6 +737,12 @@ iframe {
     border-left: 1px solid grey;
 }
 
+.img_dashboard{
+    width: 15rem;
+    margin-top: 1rem;
+    border-radius: 0;
+}
+
 .btn_admin {
     padding: 1rem 1.4rem;
     margin: 0.5rem;

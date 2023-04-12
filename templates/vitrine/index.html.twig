@@ -18,28 +18,25 @@
         <table class="table dashboard_vitrines">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Nom</th>
-
                     <th>Nouveauté ?</th>
                     <th>Prix</th>
                     <th>Disponible ?</th>
                     <th>Description</th>
-    
+                    <th>Photo</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for vitrine in vitrines %}
                 <tr>
-                    <td>{{ vitrine.id }}</td>
                     <td>{{ vitrine.Name }}</td>
 
                     <td>{{ vitrine.New ? 'Oui' : 'Non' }}</td>
                     <td>{{ vitrine.Price }} €</td>
                     <td>{{ vitrine.Available ? 'Oui' : 'Non' }}</td>
                     <td>{{ vitrine.Description }}</td>
-
+                    <td><img class="img_dashboard" src="/upload/{{ vitrine.Image }}" alt=""></td>
                     <td>
                         <button class=" btn_admin btn_admin_show"><a href="{{ path('app_vitrine_show', {'id': vitrine.id}) }}">Voir</a></button>
                         <button class=" btn_admin btn_admin_edit"><a href="{{ path('app_vitrine_edit', {'id': vitrine.id}) }}">Modifier</a></button>

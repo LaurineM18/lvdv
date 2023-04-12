@@ -67,9 +67,11 @@ class VitrineController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $file = $form["Image"]->getData();
+            if($form["Image"]->getData()){
+                $file = $form["Image"]->getData();
+                $imgService->updateImage($file , $vitrine );
+            }
 
-            $imgService->updateImage($file , $vitrine );
             $vitrineRepository->save($vitrine, true);
 
             return $this->redirectToRoute('app_vitrine_index', [], Response::HTTP_SEE_OTHER);
