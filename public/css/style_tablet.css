@@ -1,0 +1,131 @@
+@media screen and (min-width:768px) and (max-width:1223px) {
+    .navbar_mobile {
+        margin: 0;
+        padding: 5rem;
+    }
+
+    .navbar_mobile .logo {
+        padding: 1rem;
+    }
+
+    .modal {
+        height: 100vh;
+        width: 50%;
+    }
+
+    /*****FOOTER*****/
+    .decoration_footer {
+        display: block;
+        width: 16rem;
+        height: 20rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(/assets/img/Stripes.png);
+        position: absolute;
+        right: -0.2rem;
+        bottom: 9rem;
+        z-index: -5;
+    }
+
+    /*****HOME*****/
+    /**HEROHEADER**/
+    .heroheader {
+        margin-bottom: 10rem;
+    }
+
+    /**NEWS**/
+    .img-carousel {
+        width: 30rem;
+    }
+
+    .decoration_up {
+        right: 1rem;
+    }
+
+    .decoration_down {
+        display: block;
+        width: 13rem;
+        height: 13rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(/assets/img/Bubbles.png);
+        position: absolute;
+        left: 1rem;
+        bottom: -4rem;
+    }
+
+    .infos_news p {
+        text-align: center;
+    }
+
+    /*CAROUSEL*/
+    .carousel-next,
+    .carousel-previous {
+        right: 10rem;
+    }
+
+    .carousel-previous {
+        right: auto;
+        left: 10rem;
+    }
+
+
+    /**EXPO**/
+    .infos_expo {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+    }
+
+    .infos_expo .flyer {
+        text-align: center;
+        height: 100%;
+        border-radius: 0;
+        margin: 5rem 0 0;
+    }
+
+    .text-expo {
+        margin-left: 6rem;
+    }
+
+    /*****VITRINES*****/
+    .page_vitrines>p {
+        text-align: center;
+    }
+
+    /*****EXPOSITION*****/
+    .page_expo {
+        margin: 5rem 6rem;
+    }
+
+    .expo_container .flyer {
+        width: 50%;
+    }
+
+    .btn_mail {
+        width: 100%;
+    }
+
+
+    /*****CONTACT*****/
+    .contact_container {
+        margin: 5rem 6rem;
+    }
+
+    .coordonnees_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form {
+        margin-top: 10rem;
+    }
+
+
+    /*****FAQ*****/
+    .faq_container p{
+        text-align: center;
+     }
+
+}

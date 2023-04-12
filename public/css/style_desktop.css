@@ -1,0 +1,360 @@
+@media screen and (min-width: 1224px) {
+    .navbar_mobile_container {
+        display: none;
+    }
+
+    /**Navbar Desktop**/
+    .navbar_container {
+        border-bottom: 3px solid #8B3144;
+        display: flex;
+        background-color: white;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo_container {
+        background-color: white;
+        padding: 15px 130px 15px 30px;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 100px;
+        width: 180px;
+    }
+
+    .navlinks_container {
+        background-color: #8B3144;
+        padding-left: 250px;
+        padding-right: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navlinks_container a {
+        padding: 43px 20px;
+        color: white;
+        font-size: 2rem;
+        font-family: 'Avenir', Roboto, monospace
+    }
+
+    .navlinks_container .onglet:hover {
+        background-color: white;
+        text-decoration: underline;
+        color: #8B3144;
+    }
+
+    .submenu {
+        display: none;
+    }
+
+    .submenu_container:hover .submenu {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        background-color: #8B3144;
+        border: 1px solid white;
+    }
+
+    .submenu a:hover {
+        border: 1px solid #8B3144;
+    }
+
+    /*****FOOTER*****/
+
+    .footerlinks_container a {
+        margin-left: 6rem;
+    }
+
+    .socialicons_container {
+        margin-left: 10rem;
+    }
+
+    .socialicons_container a {
+        margin-left: 20px;
+    }
+
+    .socialicons_container img {
+        width: 4rem;
+    }
+
+    .socialicons_container img:hover {
+        transform: scale(1.2);
+    }
+
+    .decoration_footer {
+        display: block;
+        width: 20rem;
+        height: 26rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(/assets/img/Stripes.png);
+        position: absolute;
+        right: -0.2rem;
+        bottom: 9rem;
+        z-index: -5;
+    }
+
+    /****HOME****/
+    /**HEROHEADER**/
+    .heroheader {
+        flex-direction: row;
+        margin: 15rem 10rem;
+    }
+
+    .heroheader .bcg_vitrine{
+        display: none;
+    }
+
+    .heroheader .vitrine {
+        display: block;
+        width: 50rem;
+        border-radius: 25px;
+    }
+
+    .heroheader #title_mobile {
+        display: none;
+    }
+
+    .heroheader #title_desktop {
+        display: block;
+        text-align: left;
+    }
+
+    .heroheader_btn_container {
+        flex-direction: row;
+        margin-top: 5rem;
+    }
+
+    .btn_allVitrines {
+        margin-right: 2.5rem;
+    }
+
+    .btn_personnalisation {
+        margin-left: 2.5rem;
+        margin-top: 0;
+    }
+
+
+    /**NEWS**/
+    .infos_news {
+        margin: 7rem 10rem 2rem;
+    }
+
+    .infos_news p {
+        text-align: center;
+    }
+
+    .carousel_container {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+
+    .img-carousel {
+        width: 400px;
+        height: auto;
+    }
+
+    .btn_news {
+        position: absolute;
+        right: 20rem;
+        bottom: 6rem;
+    }
+
+    .decoration_up {
+        width: 25rem;
+        height: 25rem;
+        right: 1rem;
+        top: -10rem;
+    }
+
+    .decoration_down {
+        display: block;
+        width: 25rem;
+        height: 25rem;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(/assets/img/Bubbles.png);
+        position: absolute;
+        left: 1rem;
+        bottom: -10rem;
+    }
+
+    /*CAROUSEL*/
+    .carousel {
+        margin: 0 150px;
+    }
+
+    .carousel-previous {
+        left: 20rem;
+    }
+
+
+    /**EXPO**/
+    .expo {
+        margin: 10rem 0;
+    }
+
+    .infos_expo {
+        flex-direction: row;
+        margin: 10rem;
+    }
+
+    .text-expo {
+        margin: 0 6rem;
+        text-align: left;
+    }
+
+
+    /*****VITRINES*****/
+    .page_vitrines {
+        margin: 10rem 6rem;
+    }
+
+    .page_vitrines>p {
+        text-align: center;
+    }
+
+    .vitrines_container {
+        flex-direction: row;
+    }
+
+    .filter_container {
+        margin-right: 5rem;
+        width: 300px;
+    }
+
+    .filter_container label {
+        margin-right: 2.5rem;
+    }
+
+
+    /*****EXPOSITION*****/
+    .page_expo {
+        margin: 10rem 6rem;
+    }
+
+    .expo_container {
+        margin-top: 10rem;
+    }
+
+    .expo_container .flyer {
+        width: 30%;
+    }
+
+    iframe{
+        display: block;
+        margin: 2rem auto 0;
+    }
+
+    .email_container {
+        flex-direction: row;
+        margin-top: 10rem;
+    }
+
+    .form_email_container {
+        display: flex;
+        align-items: stretch;
+        margin-left: 3rem;
+        height: 4rem;
+    }
+
+    .input_email {
+        width: 27rem;
+        margin: 0;
+    }
+
+    .btn_mail {
+        margin-left: 2.5rem;
+    }
+
+    .btn_mail:hover {
+        color: white;
+        background-color: #8B3144;
+    }
+
+    .succes {
+        color: #8B3144;
+        font-size: 2rem;
+        text-align: center;
+        margin: 10rem 0 -10rem;
+    }
+
+    /*****CONTACT*****/
+    .contact_container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 10rem 6rem;
+    }
+
+    .coordonnees_container{
+        width: 50%;
+        margin-right: 4rem;
+    }
+
+    /***FORM***/
+    .form_container {
+        margin: 0;
+        padding: 0 4rem 4rem 4rem;
+        border: 1px solid #8B3144;
+        border-radius: 1rem;
+    }
+
+    .form_container>h1 {
+        margin: 2rem auto ;
+    }
+
+    .btn_form:hover {
+        color: white;
+        background-color: #8B3144;
+    }
+
+    /*****FAQ*****/
+    .faq_container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .faq_container p{
+       text-align: center;
+    }
+
+    .faq {
+        margin: 10rem 6rem;
+        width: 60%;
+    }
+
+
+
+
+    /****ADMIN****/
+    /****DASHBOARD****/
+    .dashboard_container {
+        margin: 3rem 10rem;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .dashboard_allvitrines {
+        background-color: aquamarine;
+        width: 100rem;
+        text-align: center;
+        margin-left: 10rem;
+    }
+
+
+    .dashboard_allvitrines table {
+        background-color: maroon;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dashboard_allvitrines th {
+        background-color: antiquewhite;
+    }
+}
