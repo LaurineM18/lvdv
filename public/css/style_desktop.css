@@ -228,10 +228,18 @@
         width: 300px;
     }
 
+    .filter_container > form{
+        display: block;
+        margin-bottom: 0;
+    }
+
     .filter_container label {
         margin-right: 2.5rem;
     }
 
+    .btn_filter, .btn_filter > a{
+        margin-top: 1rem;
+    }
 
     /*****EXPOSITION*****/
     .page_expo {

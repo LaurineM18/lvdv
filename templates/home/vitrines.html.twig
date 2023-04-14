@@ -12,33 +12,15 @@
 
         <div class='filter_container'>
             <p>Filtres</p>
-            <div>
-                <input type="checkbox" name="nouveautés" id="">
-                <label for="nouveautés">Nouveautés</label>
-                <p>Format :</p>
-                <input type="checkbox" name="cloche" id="">
-                <label for="cloche">Cloche</label>
-                <input type="checkbox" name="boite" id="">
-                <label for="boite">Boite</label>
-                <input type="checkbox" name="terrarium" id="">
-                <label for="terrarium">Terrarium</label>
-                <input type="checkbox" name="plexi" id="">
-                <label for="plexi">Cube Plexi</label>
-                <p>Thèmes :</p>
-                <select name="theme" id="theme">
-                    <option value="default">Choisir un thème</option>
-                    <option value="noel">Noel</option>
-                    <option value="halloween">Halloween</option>
-                    <option value="animaux">Animaux</option>
-                    <option value="couture">Couture</option>
-                    <option value="printemps">Printemps</option>
-                    <option value="peinture">Peinture</option>
-                    <option value="boutiques">Boutiques</option>
-                    <option value="personnalisation">Personnalisation</option>
-                    <option value="automne">Automne</option>
-                    <option value="voyages">Voyages</option>
-                </select>
-            </div>
+            {{form_start(form)}}
+                {{form_row(form.q)}}
+
+                {{form_row(form.new)}}
+                {{form_row(form.available)}}
+
+            <button type="submit" class="btn btn_filter">Filtrer</button>
+            <button type="submit" class="btn btn_filter"><a href="{{ path('app_vitrines') }}">Tout réinitialiser</a></button>
+            {{form_end(form)}}
             </div>
 
         <div class='cards_vitrines_container'>

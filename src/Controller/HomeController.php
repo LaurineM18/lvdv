@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Data\SearchData;
 use App\Entity\Contact;
 use App\Entity\Vitrine;
 use App\Form\ContactType;
+use App\Form\SearchType;
 use App\Repository\ContactRepository;
+use App\Repository\VitrineRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,12 +23,40 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig');
     }
 
-    #[Route('/vitrines', name: 'app_vitrines')]
+    /*#[Route('/vitrines', name: 'app_vitrines')]
     public function AllVitrines(EntityManagerInterface $em): Response
     {
         $listeVitrines = $em->getRepository(Vitrine::class)->findAll();
         return $this->render('home/vitrines.html.twig', [
             'vitrines' => $listeVitrines
+        ]);
+    }*/
+
+    #[Route('/vitrines', name: 'app_vitrines')]
+    public function allVitrines(VitrineRepository $repository, Request $request): Response
+    {
+        $data = new SearchData();
+        $form = $this->createForm(SearchType::class, $data);
+        $form->handleRequest($request);
+        $listeVitrines = $repository->findSearch($data);
+        return $this->render('home/vitrines.html.twig', [
+            'vitrines' => $listeVitrines,
+            'form' => $form
+        ]);
+    }
+
+    #[Route('/nouveautes', name: 'app_new_vitrines')]
+    public function newVitrines(VitrineRepository $repository, Request $request): Response
+    {
+        $data = new SearchData();
+        $data->new = true;
+        $data->available = true;
+        $form = $this->createForm(SearchType::class, $data);
+        $form->handleRequest($request);
+        $listeVitrines = $repository->findSearch($data);
+        return $this->render('home/vitrines.html.twig', [
+            'vitrines' => $listeVitrines,
+            'form' => $form
         ]);
     }
 

@@ -2,8 +2,10 @@
 
 namespace App\Repository;
 
+use App\Data\SearchData;
 use App\Entity\Vitrine;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -37,6 +39,36 @@ class VitrineRepository extends ServiceEntityRepository
         if ($flush) {
             $this->getEntityManager()->flush();
         }
+    }
+
+    /**
+     * Récupère les produits en lien avec une recherche
+     * @return Vitrine[]
+     */
+    public function findSearch(SearchData $search): array
+    {
+        $query = $this
+            ->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC');
+
+        if(!empty($search->q)){
+            $query = $query
+                ->andWhere('p.Name LIKE :q')
+                ->setParameter('q', "%{$search->q}%")
+                ->orderBy('p.id', 'DESC');
+        }
+
+        if(!empty($search->new)){
+            $query = $query
+                ->andWhere('p.New = 1');
+        }
+
+        if(!empty($search->available)){
+            $query = $query
+                ->andWhere('p.Available = 1');
+        }
+
+        return $query->getQuery()->getResult();
     }
 
 //    /**
