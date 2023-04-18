@@ -60,6 +60,13 @@ class HomeController extends AbstractController
         ]);
     }
 
+    #[Route('/personnalisation', name: 'app_personalization_vitrines')]
+    public function personalization(): Response
+    {
+        return $this->render('home/personalization.html.twig');
+    }
+
+
     #[Route('/vitrine/{id}', name: 'app_show_vitrine')]
     public function showVitrine(Vitrine $vitrine): Response
     {

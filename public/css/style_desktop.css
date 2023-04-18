@@ -188,7 +188,9 @@
     .carousel {
         margin: 0 150px;
     }
-
+    .carousel-next {
+        right: 20rem;
+    }
     .carousel-previous {
         left: 20rem;
     }
@@ -239,6 +241,15 @@
 
     .btn_filter, .btn_filter > a{
         margin-top: 1rem;
+    }
+
+    /*****PERSONNALISATION*****/
+    .page_perso {
+        margin: 10rem 6rem;
+    }
+
+    .perso_container {
+        margin-top: 5rem;
     }
 
     /*****EXPOSITION*****/

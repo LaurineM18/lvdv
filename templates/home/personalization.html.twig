@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personnalisation{% endblock %}
+
+
+{% block body %}
+    <div class="page_perso">
+        <h1>La personnalisation</h1>
+        <div class='perso_container'>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis illo possimus enim maiores cumque repellendus magni. Vero, nesciunt? Eaque officia odit aut omnis quos odio pariatur delectus? Iusto, est odit.</p>
+            <button class='btn btn_allVitrines'>
+            <a href="{{path('app_contact')}}">Me contacter</a>
+        </button>
+            <h3>Quelques exemples de personnalisation</h3>
+            <div class="carousel_container">
+                <img class='img-carousel' src="assets/img/koalas.jpg" alt="Vitrine Koalas" />
+                <img class='img-carousel' src="assets/img/BonhommeNeige.JPG" alt="Vitrine Koalas" />
+                <img class='img-carousel' src="assets/img/CerfPrintanier.JPG" alt="Vitrine Koalas" />
+            </div>
+            <button class="carousel-next"><img src="assets/img/chevron-right.png" alt=""></button>
+            <button class="carousel-previous"><img src="assets/img/chevron-left.png" alt=""></button>
+        </div>
+        <button class='btn btn_allVitrines'>
+            <a href="{{path('app_vitrines')}}">Voir toutes les vitrines</a>
+        </button>
+        
+    </div>
+
+<script src="{{asset('js/index.js')}}"></script>
+{% endblock %}

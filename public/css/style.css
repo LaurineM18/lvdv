@@ -531,6 +531,24 @@ img {
 .btn_back:hover > a{
     color: #8B3144;
 }
+
+/*****PERSONNALISATION*****/
+.page_perso {
+    margin: 5rem 6rem;
+}
+
+.perso_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.perso_container > h3{
+    margin: 3rem 0;
+}
+
+
+
 /*****EXPOSITION*****/
 .page_expo {
     margin: 5rem 6rem;

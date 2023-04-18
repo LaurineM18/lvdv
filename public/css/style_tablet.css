@@ -93,6 +93,11 @@
         text-align: center;
     }
 
+    /*****PERSONNALISATION*****/
+    .page_perso {
+        margin: 5rem 6rem;
+    }
+
     /*****EXPOSITION*****/
     .page_expo {
         margin: 5rem 6rem;
