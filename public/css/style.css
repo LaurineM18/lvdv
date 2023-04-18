@@ -547,6 +547,28 @@ img {
     margin: 3rem 0;
 }
 
+.img_personalization_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 2rem;
+}
+
+.img_personalization_container div{
+    padding: 1rem;
+}
+
+.img_personalization_container p{
+    text-align: center;
+    font-weight: 600;
+}
+
+
+.img_personalization{
+    width: 50rem;
+}
+
 
 
 /*****EXPOSITION*****/
