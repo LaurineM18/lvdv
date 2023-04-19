@@ -243,6 +243,40 @@
         margin-top: 1rem;
     }
 
+    /*****1 VITRINE*****/
+    .detail_container{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .detail_container .carousel_container{
+        order: 0;
+    }
+
+    .detail_container .carousel{
+        width: 65rem;
+        margin: 0 8rem 0 5rem;
+    }
+
+    .detail_container .carousel .img-carousel{
+        width: 50rem;
+    }
+
+    .detail_container .carousel .carousel-next{
+        right: 0;
+    }
+
+    .detail_container .carousel .carousel-previous{
+        left: 0;
+    }
+
+    .detail_container > div{
+        justify-content: start;
+        margin-top: 5rem;
+        margin-left: 0;
+    }
+
+
     /*****PERSONNALISATION*****/
     .page_perso {
         margin: 10rem 6rem;

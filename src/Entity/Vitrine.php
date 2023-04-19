@@ -30,8 +30,22 @@ class Vitrine
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Description = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $image = null;
+    #[ORM\ManyToOne(inversedBy: 'vitrines')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Format $format = null;
+
+    #[ORM\ManyToOne(inversedBy: 'vitrines')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Theme $theme = null;
+
+    #[ORM\OneToMany(mappedBy: 'vitrines', targetEntity: Image::class, orphanRemoval: true, cascade:['persist'])]
+    private Collection $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
+
 
 
     public function getId(): ?int
@@ -100,18 +114,59 @@ class Vitrine
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getFormat(): ?Format
     {
-        return $this->image;
+        return $this->format;
     }
 
-    public function setImage(?string $image): self
+    public function setFormat(?Format $format): self
     {
-        $this->image = $image;
+        $this->format = $format;
 
         return $this;
     }
 
+    public function getTheme(): ?Theme
+    {
+        return $this->theme;
+    }
+
+    public function setTheme(?Theme $theme): self
+    {
+        $this->theme = $theme;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): self
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setVitrines($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): self
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getVitrines() === $this) {
+                $image->setVitrines(null);
+            }
+        }
+
+        return $this;
+    }
 
 
 }

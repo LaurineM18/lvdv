@@ -34,7 +34,9 @@
             </tr>
             <tr>
                 <th>Images</th>
-                <td><img class="img_dashboard" src="{{ asset('/upload/' ~ vitrine.Image) }}" alt=""></td>
+                <td>{% for image in vitrine.images %}
+                <img class="img_dashboard"src="{{ asset('/upload/' ~ image.title) }}" alt="">
+                {% endfor %}</td>
             </tr>
 
         </tbody>

@@ -36,7 +36,9 @@
                     <td>{{ vitrine.Price }} €</td>
                     <td>{{ vitrine.Available ? 'Oui' : 'Non' }}</td>
                     <td>{{ vitrine.Description }}</td>
-                    <td><img class="img_dashboard" src="{{ asset('/upload/' ~ vitrine.Image) }}" alt=""></td>
+                    <td>{% for image in vitrine.images %}
+                <img class="img_dashboard"src="{{ asset('/upload/' ~ image.title) }}" alt="">
+                {% endfor %}</td>
                     <td>
                         <button class=" btn_admin btn_admin_show"><a href="{{ path('app_vitrine_show', {'id': vitrine.id}) }}">Voir</a></button>
                         <button class=" btn_admin btn_admin_edit"><a href="{{ path('app_vitrine_edit', {'id': vitrine.id}) }}">Modifier</a></button>

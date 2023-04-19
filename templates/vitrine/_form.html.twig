@@ -1,4 +1,9 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+    {% if app.request.attributes.get('_route') == 'app_vitrine_edit' %}
+    {% for image in vitrine.images %}
+        <img class="img_dashboard" src="{{ asset('/upload/' ~ image.title) }}" alt="">
+    {% endfor %}
+    {% endif %}
     <button class="btn btn_form">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}

@@ -50,7 +50,6 @@ class HomeController extends AbstractController
     {
         $data = new SearchData();
         $data->new = true;
-        $data->available = true;
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
         $listeVitrines = $repository->findSearch($data);

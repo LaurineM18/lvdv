@@ -2,15 +2,18 @@
 
 namespace App\Form;
 
+use App\Entity\Theme;
+use App\Entity\Format;
 use App\Entity\Vitrine;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\MoneyType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class VitrineType extends AbstractType
 {
@@ -51,13 +54,34 @@ class VitrineType extends AbstractType
                 ],
                 'required' => false
             ])
-            ->add('Image',  FileType::class, [
-                'label' => 'Image ',
+            ->add('Format',  EntityType::class, [
+                'class' => Format::class,
+                'label' => 'Format ',
                 'attr' => [
                     'class' => 'input'
                 ],
-                'required' => false,
-                'data_class' => null
+                'multiple' => false,
+                'expanded' => false,
+                'required' => true
+            ])
+            ->add('Theme',  EntityType::class, [
+                'class' => Theme::class,
+                'label' => 'Thème ',
+                'attr' => [
+                    'class' => 'input'
+                ],
+                'multiple' => false,
+                'expanded' => false,
+                'required' => true
+            ])
+            ->add('images',  FileType::class, [
+                'label' => 'Insérer des images ',
+                'attr' => [
+                    'class' => 'input'
+                ],
+                'mapped' => false,
+                'multiple' => true,
+                'required' => true
             ])
         ;
     }

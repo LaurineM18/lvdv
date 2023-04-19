@@ -6,15 +6,23 @@
 
 <div class="showdetail_page">
     <div class="detail_container">
-        <img class='img_detail' src="{{ asset('/assets/img/koalas.jpg') }}" alt="" />
+       <div class="carousel_container">
+            {% for image in vitrine.images %}
+            <img class="img-carousel"src="{{ asset('/upload/' ~ image.title) }}" alt="Vitrine {{image.title}}">
+            {% endfor %}
+        </div>
+        <button class="carousel-next"><img src="{{ asset('/assets/img/chevron-right.png') }}" alt=""></button>
+        <button class="carousel-previous"><img src="{{ asset('/assets/img/chevron-left.png') }}" alt=""></button>
         <div>
             <h1 class="detail_title_vitrine">{{vitrine.name}}</h1>
+            <p>Format : {{vitrine.format}}</p>
+            <p>{{vitrine.description}}</p>
             <div>
                 {% if vitrine.available %}
                 <p>Vitrine disponible</p>
                 <p class='detail_price_vitrine'>{{vitrine.price}} €</p>
             </div>
-            <div>
+            <div class="contact_condition">
                 <p>Intéressé(e) par cette vitrine ?</p>
                 <button class='btn btn_contact'>
                     <a href="{{path('app_vitrines')}}">Contactez-moi</a>
@@ -34,6 +42,7 @@
         
 
 
+<script src="{{asset('js/index.js')}}"></script>
 
 {% endblock %}
 

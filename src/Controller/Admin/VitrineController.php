@@ -2,11 +2,12 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Image;
 use App\Entity\Vitrine;
 use App\Form\VitrineType;
 use App\Services\ImageService;
-use App\Repository\VitrineRepository;
 
+use App\Repository\VitrineRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -33,9 +34,19 @@ class VitrineController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $file = $form['Image']->getData();
-            
-            $imgService->moveImage($file,$vitrine);
+            $images = $form->get('images')->getData();
+
+            foreach($images as $image){
+                $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+                $image->move(
+                    $this->getParameter('upload_directory'),
+                    $fichier
+                );
+
+                $img = new Image;
+                $img->setTitle($fichier);
+                $vitrine->addImage($img); 
+            }
             $vitrineRepository->save($vitrine, true);
 
             $this->addFlash(
@@ -67,9 +78,20 @@ class VitrineController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            if($form["Image"]->getData()){
-                $file = $form["Image"]->getData();
-                $imgService->updateImage($file , $vitrine );
+            if($form->get('images')->getData()){
+                $images = $form->get('images')->getData();
+
+            foreach($images as $image){
+                $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+                $image->move(
+                    $this->getParameter('upload_directory'),
+                    $fichier
+                );
+
+                $img = new Image;
+                $img->setTitle($fichier);
+                $vitrine->addImage($img); 
+            }
             }
 
             $vitrineRepository->save($vitrine, true);

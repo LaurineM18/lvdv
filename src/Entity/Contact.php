@@ -26,8 +26,6 @@ class Contact
     #[ORM\Column(type: Types::TEXT)]
     private ?string $message = null;
 
-    #[ORM\Column]
-    private ?bool $rgpd = null;
 
     public function getId(): ?int
     {
@@ -82,15 +80,4 @@ class Contact
         return $this;
     }
 
-    public function isRgpd(): ?bool
-    {
-        return $this->rgpd;
-    }
-
-    public function setRgpd(bool $rgpd): self
-    {
-        $this->rgpd = $rgpd;
-
-        return $this;
-    }
 }

@@ -26,7 +26,9 @@
         <div class='cards_vitrines_container'>
             {% for vitrine in vitrines %}
                 <div class='card'>
-                    <img class='img_card' src="{{ asset('upload/' ~ vitrine.image) }}" alt="" />
+                    {% for image in vitrine.images|slice(0,1) %}
+                        <img class="img_card"src="{{ asset('/upload/' ~ image.title) }}" alt="">
+                    {% endfor %}
                     <p class='title_vitrine'>{{vitrine.name}}</p>
                     <p class='price_vitrine'>{{vitrine.price}} €</p>
                     <button class='btn_detail_vitrine'>

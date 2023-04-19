@@ -41,7 +41,8 @@ class ContactType extends AbstractType
                 ]
             ])
             ->add('rgpd', CheckboxType::class, [
-                'label' => 'Vous consentez à ce que votre email soit stocké afin de pouvoir vous répondre.'
+                'label' => 'Vous consentez à ce que votre email soit stocké afin de pouvoir vous répondre.',
+                'mapped' => false
             ])
         ;
     }

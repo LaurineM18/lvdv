@@ -500,29 +500,52 @@ img {
 }
 .detail_container{
     display: flex;
+    flex-direction: column;
 }
 
-.img_detail{
-    width: 50%;
-    margin-right: 2rem;
-    margin-bottom: 4rem;
+.detail_container .carousel_container{
+    margin: 5rem 0;
+    order: 1;
+}
+
+
+.detail_container .carousel .img-carousel{
+    width: 44rem;
+}
+
+.detail_container .carousel .carousel-next{
+    right: 1rem;
+}
+
+.detail_container .carousel .carousel-previous{
+    left: 1rem;
 }
 
 .detail_title_vitrine{
     text-align: start;
     margin: 0 0 2rem;
+    order: 0;
 }
 
 .detail_container > div{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    margin-left: 2rem;
+}
 
+.detail_container > div > div:first-of-type p:first-of-type{
+    color: #ff9784;
+    font-weight: 600;
+    font-size: 1.6rem;
 }
 
 .detail_price_vitrine{
     font-size: 2rem;
     font-weight: 600;
+}
+
+.contact_condition{
+    margin-top: 5rem;
 }
 
 .btn_contact{
