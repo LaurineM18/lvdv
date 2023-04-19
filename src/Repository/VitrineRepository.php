@@ -68,6 +68,12 @@ class VitrineRepository extends ServiceEntityRepository
                 ->andWhere('p.Available = 1');
         }
 
+        if(!empty($search->theme)){
+            $query = $query
+                ->andWhere('p.theme IN (:theme)')
+                ->setParameter('theme', $search->theme);
+        }
+
         return $query->getQuery()->getResult();
     }
 

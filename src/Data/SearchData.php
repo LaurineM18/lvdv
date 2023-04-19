@@ -2,6 +2,7 @@
 
 namespace App\Data;
 
+use App\Entity\Theme;
 use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -21,4 +22,9 @@ class SearchData extends AbstractController
      * @var boolean
      */
     public $available = false;
+
+    /**
+     * @var Theme[]
+     */
+    public $theme = [];
 }
