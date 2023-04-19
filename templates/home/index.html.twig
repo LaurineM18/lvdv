@@ -8,7 +8,7 @@
         <section class='heroheader'>
             <div class='bcg_vitrine'>
             </div>
-            <img class='vitrine' src="assets/img/BackgroundDesktop.jpg" alt="Présentation de Vitrines" />
+            <img class='vitrine' src="{{ asset('/assets/img/BackgroundDesktop.jpg') }}" alt="Présentation de Vitrines" />
             <h1 id="title_mobile">Bienvenue dans un univers de miniatures !</h1>
             <div class="text_heroheader">
                 <h1 id="title_desktop">Bienvenue dans un univers de miniatures !</h1>
@@ -33,12 +33,12 @@
                 <p>Voici mes toutes dernières créations, pièces uniques inspirées par mes récentes trouvailles ou réalisations de commandes.  </p>
             </div>
             <div class="carousel_container">
-                <img class='img-carousel' src="assets/img/koalas.jpg" alt="Vitrine Koalas" />
-                <img class='img-carousel' src="assets/img/BonhommeNeige.JPG" alt="Vitrine Koalas" />
-                <img class='img-carousel' src="assets/img/CerfPrintanier.JPG" alt="Vitrine Koalas" />
+                <img class='img-carousel' src="{{ asset('/assets/img/koalas.jpg') }}" alt="Vitrine Koalas" />
+                <img class='img-carousel' src="{{ asset('/assets/img/BonhommeNeige.JPG') }}" alt="Vitrine Koalas" />
+                <img class='img-carousel' src="{{ asset('/assets/img/CerfPrintanier.JPG') }}" alt="Vitrine Koalas" />
             </div>
-                <button class="carousel-next"><img src="assets/img/chevron-right.png" alt=""></button>
-                <button class="carousel-previous"><img src="assets/img/chevron-left.png" alt=""></button>
+                <button class="carousel-next"><img src="{{ asset('/assets/img/chevron-right.png') }}" alt=""></button>
+                <button class="carousel-previous"><img src="{{ asset('/assets/img/chevron-left.png') }}" alt=""></button>
             <button class='btn btn_news'>
                 <a href="">Voir toutes les nouveautés</a>
             </button>
@@ -47,7 +47,7 @@
         <section class='expo'>
             <h1>Ma prochaine exposition</h1>
             <div class='infos_expo'>
-                <img class='flyer' src="assets/img/Flyer.jpg" alt="Flyer de la prochaine exposition" />
+                <img class='flyer' src="{{ asset('/assets/img/Flyer.jpg') }}" alt="Flyer de la prochaine exposition" />
                 <div class='text-expo'>
                     <h2>Salon des Loisirs Créatifs</h2>
                     <h3>13 et 14 mai 2023 à Cesson (77)</h3>
@@ -65,5 +65,6 @@
     </div>
 
 <script src="{{asset('js/index.js')}}"></script>
+<script src="{{asset('js/exposition.js')}}"></script>
 {% endblock %}
 

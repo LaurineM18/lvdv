@@ -12,25 +12,29 @@
                 <td>{{ vitrine.id }}</td>
             </tr>
             <tr>
-                <th>Name</th>
+                <th>Nom</th>
                 <td>{{ vitrine.Name }}</td>
             </tr>
 
             <tr>
-                <th>New</th>
-                <td>{{ vitrine.New ? 'Yes' : 'No' }}</td>
+                <th>Nouveauté ?</th>
+                <td>{{ vitrine.New ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
-                <th>Price</th>
-                <td>{{ vitrine.Price }}</td>
+                <th>Prix</th>
+                <td>{{ vitrine.Price }} €</td>
             </tr>
             <tr>
-                <th>Available</th>
-                <td>{{ vitrine.Available ? 'Yes' : 'No' }}</td>
+                <th>Disponible ?</th>
+                <td>{{ vitrine.Available ? 'Oui' : 'Non' }}</td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>{{ vitrine.Description }}</td>
+            </tr>
+            <tr>
+                <th>Images</th>
+                <td>{{ vitrine.image }}</td>
             </tr>
 
         </tbody>
