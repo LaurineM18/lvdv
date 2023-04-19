@@ -1,13 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Vitrine{% endblock %}
+{% block title %}Modifier une vitrine{% endblock %}
 
 {% block body %}
-    <h1>Edit Vitrine</h1>
+<div class="dashboard_vitrines">
+
+    <h1>Modifier vitrine : {{vitrine.name}}</h1>
+    
 
     {{ include('vitrine/_form.html.twig', {'button_label': 'Modifier'}) }}
 
     <a class="dashboard_link" href="{{ path('app_vitrine_index') }}">Retour à la liste</a>
 
     {{ include('vitrine/_delete_form.html.twig') }}
+</div>
 {% endblock %}

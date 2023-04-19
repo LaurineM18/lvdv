@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Vitrine{% endblock %}
+{% block title %}Nouvelle vitrine{% endblock %}
 
 {% block body %}
+<div class="dashboard_vitrines">
 
     <h1>Enregistrer une nouvelle Vitrine</h1>
-
-    <div class="form_container">
-        {{ include('vitrine/_form.html.twig') }}
     
-    </div>
-
+        {{ include('vitrine/_form.html.twig') }}
 
     <a class="dashboard_link" href="{{ path('app_vitrine_index') }}">Retour à la liste</a>
+</div>
+
 {% endblock %}

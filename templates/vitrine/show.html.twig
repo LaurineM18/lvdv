@@ -3,10 +3,10 @@
 {% block title %}Vitrine{% endblock %}
 
 {% block body %}
-    <h1>Vitrine</h1>
+    <h1>Vitrine : {{ vitrine.Name }}</h1>
 
-    <table class="table">
-        <tbody>
+    <table class="table dashboard_vitrines">
+        <tbody class="table_show_vitrine">
             <tr>
                 <th>Id</th>
                 <td>{{ vitrine.id }}</td>
@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <th>Images</th>
-                <td>{{ vitrine.image }}</td>
+                <td><img class="img_dashboard" src="{{ asset('/upload/' ~ vitrine.Image) }}" alt=""></td>
             </tr>
 
         </tbody>

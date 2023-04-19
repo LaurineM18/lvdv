@@ -674,7 +674,7 @@ iframe {
     align-items: flex-start;
 }
 
-.form_container label {
+ label {
     font-family: 'Avenir';
     font-size: 1.6rem;
     color: black;
@@ -846,4 +846,11 @@ iframe {
 .btn_admin_delete {
     color: red;
     cursor: pointer;
+}
+
+/*Voir vitrine*/
+.table_show_vitrine th, td{
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-collapse: collapse;
 }
