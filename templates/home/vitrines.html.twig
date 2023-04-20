@@ -13,12 +13,26 @@
         <div class='filter_container'>
             <p>Filtres</p>
             {{form_start(form)}}
-                {{form_row(form.q)}}
+                <div class="search">
+                    {{form_row(form.q)}} <button type="submit" class="btn_search"><img src="{{asset('/assets/img/search.png')}}" alt=""></button>
+                </div>
 
                 {{form_row(form.new)}}
                 {{form_row(form.available)}}
-
-                {{form_row(form.theme)}}
+                <hr>
+                <ul>
+                <label for="">Thèmes</label>
+                    {% for name in form.theme %}
+                        <li>{{form_widget(name)}} {{form_label(name)}}</li>
+                    {% endfor %}
+                </ul>
+                <hr>
+                <ul>
+                <label for="">Format</label>
+                    {% for name in form.format %}
+                        <li>{{form_widget(name)}} {{form_label(name)}}</li>
+                    {% endfor %}
+                </ul>
 
 
             <button type="submit" class="btn btn_filter">Filtrer</button>

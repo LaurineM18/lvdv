@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Theme;
 use App\Data\SearchData;
+use App\Entity\Format;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -35,6 +36,16 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ->add('theme',  EntityType::class, [
             'class' => Theme::class,
             'label' => 'Thèmes ',
+            'multiple' => true,
+            'expanded' => true,
+            'required' => false
+        ])
+        ->add('format',  EntityType::class, [
+            'class' => Format::class,
+            'label' => 'Format ',
+            'attr' => [
+                'class' => 'input'
+            ],
             'multiple' => true,
             'expanded' => true,
             'required' => false

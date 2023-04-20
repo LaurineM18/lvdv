@@ -74,6 +74,12 @@ class VitrineRepository extends ServiceEntityRepository
                 ->setParameter('theme', $search->theme);
         }
 
+        if(!empty($search->format)){
+            $query = $query
+                ->andWhere('p.format IN (:format)')
+                ->setParameter('format', $search->format);
+        }
+
         return $query->getQuery()->getResult();
     }
 

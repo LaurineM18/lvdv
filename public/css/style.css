@@ -400,14 +400,31 @@ img {
 }
 
 .filter_container>p {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
+}
+
+.filter_container .search {
+    display: flex;
+}
+
+.btn_search{
+    background-color: #ffffff;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
 }
 
 .filter_container label {
     font-family: 'Avenir';
     margin-right: 1rem;
 }
+
+
+.filter_container ul , hr{
+    display: none;
+}
+
 
 .btn_filter, .btn_filter > a{
     background-color: rgb(255, 255, 255);

@@ -223,9 +223,15 @@
 
     .vitrines_container {
         flex-direction: row;
+        align-items: start;
     }
 
     .filter_container {
+        display: block;
+        border: 1px solid #ffa578;
+        border-radius: 15px;
+        padding: 0.5rem 1.5rem;
+        line-height: 3rem;
         margin-right: 5rem;
         width: 300px;
     }
@@ -235,8 +241,23 @@
         margin-bottom: 0;
     }
 
+    .filter_container hr {
+        display: block;
+        border: 1px dashed #ffa578;
+        margin: 1rem 0;
+    }
+
     .filter_container label {
         margin-right: 2.5rem;
+    }
+
+    .filter_container ul {
+        display: block;
+        list-style: none;
+    }
+
+    .filter_container ul li label{
+        font-size: 1.4rem;
     }
 
     #theme label{
