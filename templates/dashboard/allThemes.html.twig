@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les thèmes{% endblock %}
+
+{% block body %}
+<div class="dashboard_vitrines">
+
+    <h1>Tous les thèmes</h1>
+    
+    <ul>
+        {% for theme in themes %}
+        <li>{{theme}} 
+        <form method="post" action="{{ path('app_delete_theme', {'id': theme.id}) }}" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cet élément ?');">
+            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ theme.id) }}">
+            <button class=" btn_admin btn_admin_delete">X Supprimer</button>
+        </form>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+    <a class="dashboard_link" href="{{ path('app_vitrine_index') }}">Retour au tableau de bord</a>
+</div>
+
+{% endblock %}

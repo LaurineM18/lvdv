@@ -1,15 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nouveau thème{% endblock %}
+{% block title %}Nouveau format{% endblock %}
 
 {% block body %}
 <div class="dashboard_vitrines">
 
-    <h1>Ajouter un nouveau thème</h1>
+    <h1>Ajouter un nouveau format</h1>
     
         {{form_start(form)}}
         {{ form_widget(form) }}
+        <button class="btn btn_form">Enregistrer</button>
         {{form_end(form)}}
+
 
     <a class="dashboard_link" href="{{ path('app_vitrine_index') }}">Retour au tableau de bord</a>
 </div>

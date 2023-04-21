@@ -117,29 +117,4 @@ class VitrineController extends AbstractController
 
         return $this->redirectToRoute('app_vitrine_index', [], Response::HTTP_SEE_OTHER);
     }
-
-    #[Route('/theme', name: 'app_vitrine_new_theme', methods: ['GET', 'POST'])]
-    public function newTheme(Request $request, ThemeRepository $themeRepository): Response
-    {
-        $theme = new Theme();
-        $form = $this->createForm(ThemeType::class, $theme);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $themeRepository->save($theme, true);
-
-            $this->addFlash(
-                'success',
-                'Nouveau thème enregistré avec succès !'
-            );
-
-            return $this->redirectToRoute('app_vitrine_index', [], Response::HTTP_SEE_OTHER);
-        }
-
-        return $this->render('vitrine/newTheme.html.twig', [
-            'theme' => $theme,
-            'form' => $form,
-        ]);
-    }
 }

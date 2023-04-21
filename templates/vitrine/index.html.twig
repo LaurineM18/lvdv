@@ -14,7 +14,16 @@
         <a class="dashboard_link" href="{{ path('app_vitrine_new') }}">Retour au tableau de bord</a>
         <h1>Toutes les Vitrines</h1>
         <button class="btn"><a href="{{ path('app_vitrine_new') }}">Enregistrer une nouvelle vitrine</a></button>
-        <button class="btn"><a href="{{ path('app_new_theme') }}">Enregistrer un nouveau thème</a></button>
+        <div>
+        <h3>Les thèmes</h3>
+        <button class="btn_admin"><a href="{{ path('app_themes') }}">Gérer les thèmes</a></button>
+        <button class="btn_admin"><a href="{{ path('app_new_theme') }}">Enregistrer un nouveau thème</a></button>
+        </div>
+        <div>
+        <h3>Les formats</h3>
+        <button class="btn_admin"><a href="{{ path('app_formats') }}">Gérer les formats</a></button>
+        <button class="btn_admin"><a href="{{ path('app_new_format') }}">Enregistrer un nouveau format</a></button>
+        </div>
 
         <table class="table dashboard_vitrines">
             <thead>

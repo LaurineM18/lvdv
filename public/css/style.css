@@ -46,7 +46,7 @@ h3 {
     src: local("Fjord-Bold"), url("../assets/fonts/Fjord-Bold.otf") format(opentype);
 }
 
-p {
+p, li {
     font-family: 'Avenir', 'Roboto';
     text-align: justify;
     line-height: 3rem;
@@ -827,7 +827,7 @@ iframe {
     text-decoration: underline;
 }
 
-.dashboard_vitrines > button{
+.dashboard_vitrines > button:first-of-type{
     background-color: #ff9784;
 }
 
@@ -871,6 +871,10 @@ iframe {
     border: none;
 }
 
+.btn_admin a{
+    color: #8B3144;
+}
+
 .btn_admin:hover{
     transform: scale(1.1);
 }
@@ -879,14 +883,11 @@ iframe {
     color: grey;
 }
 
-.btn_admin_edit a {
-    color: #8B3144;
-}
-
-.btn_admin_delete {
+.btn_admin_delete, .btn_admin_delete a {
     color: red;
     cursor: pointer;
 }
+
 
 /*Voir vitrine*/
 .table_show_vitrine th, td{
