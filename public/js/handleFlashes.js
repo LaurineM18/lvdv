@@ -1,6 +1,4 @@
-console.log('hello Expo')
-
-const container = document.querySelector('.email_container')
+/*const container = document.querySelector('.email_container')
 const formEmail = document.querySelector('.form_email_container')
 const inputEmail = document.querySelector('.input_email')
 
@@ -13,4 +11,9 @@ formEmail.addEventListener('submit', (e) => {
     divSucces.innerText = "Merci, j'ai bien reçu votre email !"
     container.insertAdjacentElement('afterend', divSucces)
     container.remove()
-})
+})*/
+
+const flash = document.querySelector('.success_flash')
+const t = setTimeout(() => {
+    flash.remove()
+}, 5_000)

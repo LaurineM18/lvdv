@@ -4,6 +4,13 @@
 {% block title %}Prochaine exposition{% endblock %}
 
 {% block body %}
+{% for label, messages in app.flashes(['success', 'error']) %}
+        {% for message in messages %}
+            <div class="{{label}}_flash">
+            <p>{{ message }}</p> 
+            </div>
+        {% endfor %}
+{% endfor %}
 <div class="page_expo">
         <h1>Ma prochaine exposition</h1>
         <div class='expo_container'>
@@ -23,14 +30,10 @@
 
         </div>
         <div class='email_container'>
-            <p>Pour restez informé(e) de mes prochaines expositions, laissez-moi votre email :</p>
-            <form class='form_email_container'>
-                <input class='input_email' type="email" placeholder='Votre mail' value='' required />
-                <button class='btn btn_mail' type="submit">Recevoir les prochaines dates d'expositions</button>
-            </form>
+            {{ include('home/newsletter.html.twig') }}
         </div>
 </div>
     
-<script src="{{asset('js/exposition.js')}}"></script>
+<script src="{{asset('js/handleFlashes.js')}}"></script>
 {% endblock %}
 

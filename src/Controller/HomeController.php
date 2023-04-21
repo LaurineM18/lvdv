@@ -4,12 +4,14 @@ namespace App\Controller;
 
 use App\Data\SearchData;
 use App\Entity\Contact;
+use App\Entity\Mail;
 use App\Entity\Vitrine;
 use App\Form\ContactType;
+use App\Form\MailType;
 use App\Form\SearchType;
 use App\Repository\ContactRepository;
+use App\Repository\MailRepository;
 use App\Repository\VitrineRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,19 +20,27 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(): Response
+    public function index(MailRepository $mailRepository, Request $request): Response
     {
-        return $this->render('home/index.html.twig');
-    }
+        $mail = new Mail();
+        $form = $this->createForm(MailType::class, $mail);
+        $form->handleRequest($request);
 
-    /*#[Route('/vitrines', name: 'app_vitrines')]
-    public function AllVitrines(EntityManagerInterface $em): Response
-    {
-        $listeVitrines = $em->getRepository(Vitrine::class)->findAll();
-        return $this->render('home/vitrines.html.twig', [
-            'vitrines' => $listeVitrines
+        if ($form->isSubmitted() && $form->isValid()) {
+            $mailRepository->save($mail, true);
+
+            $this->addFlash(
+                'success',
+                'Votre message a bien été envoyé !'
+            );
+
+            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('home/index.html.twig', [
+            'form' => $form
         ]);
-    }*/
+    }
 
     #[Route('/vitrines', name: 'app_vitrines')]
     public function allVitrines(VitrineRepository $repository, Request $request): Response
@@ -77,9 +87,26 @@ class HomeController extends AbstractController
 
 
     #[Route('/expositions', name: 'app_expositions')]
-    public function expo(): Response
+    public function expo(MailRepository $mailRepository, Request $request): Response
     {
-        return $this->render('home/expo.html.twig');
+        $mail = new Mail();
+        $form = $this->createForm(MailType::class, $mail);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $mailRepository->save($mail, true);
+
+            $this->addFlash(
+                'success',
+                'Votre message a bien été envoyé !'
+            );
+
+            return $this->redirectToRoute('app_expositions', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('home/expo.html.twig', [
+            'form' => $form
+        ]);
     }
 
     #[Route('/contact', name: 'app_contact')]
@@ -110,4 +137,5 @@ class HomeController extends AbstractController
     {
         return $this->render('home/faq.html.twig');
     }
+
 }
