@@ -3,8 +3,11 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Image;
+use App\Entity\Theme;
 use App\Entity\Vitrine;
+use App\Form\ThemeType;
 use App\Form\VitrineType;
+use App\Repository\ThemeRepository;
 use App\Services\ImageService;
 
 use App\Repository\VitrineRepository;
@@ -113,5 +116,30 @@ class VitrineController extends AbstractController
         }
 
         return $this->redirectToRoute('app_vitrine_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/theme', name: 'app_vitrine_new_theme', methods: ['GET', 'POST'])]
+    public function newTheme(Request $request, ThemeRepository $themeRepository): Response
+    {
+        $theme = new Theme();
+        $form = $this->createForm(ThemeType::class, $theme);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $themeRepository->save($theme, true);
+
+            $this->addFlash(
+                'success',
+                'Nouveau thème enregistré avec succès !'
+            );
+
+            return $this->redirectToRoute('app_vitrine_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->render('vitrine/newTheme.html.twig', [
+            'theme' => $theme,
+            'form' => $form,
+        ]);
     }
 }
