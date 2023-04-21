@@ -53,7 +53,7 @@ class AdminController extends AbstractController
                 'Nouveau thème enregistré avec succès !'
             );
 
-            return $this->redirectToRoute('app_vitrine_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_dashboard_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('dashboard/newTheme.html.twig', [
@@ -98,7 +98,7 @@ class AdminController extends AbstractController
                 'Nouveau format enregistré avec succès !'
             );
 
-            return $this->redirectToRoute('app_vitrine_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_dashboard_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('dashboard/newFormat.html.twig', [

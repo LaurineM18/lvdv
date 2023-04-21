@@ -809,15 +809,17 @@ iframe {
 
 
 
-/****DASHBOARD****/
+/*****DASHBOARD*****/
 .dashboard_container {
     margin: 3rem 10rem;
-    display: flex;
-    align-items: flex-start;
 }
 
-.dashboard_vitrines{
-    margin: 2rem 3rem 0;
+.dashboard_container h1{
+    margin-bottom: 5rem;
+}
+
+.dashboard_container div{
+    margin: 3rem 0;
 }
 
 .dashboard_link{
@@ -827,8 +829,33 @@ iframe {
     text-decoration: underline;
 }
 
-.dashboard_vitrines > button:first-of-type{
-    background-color: #ff9784;
+.btn_admin {
+    padding: 1rem 1.4rem;
+    margin: 0.5rem;
+    background-color: rgb(75, 168, 75, 0);
+    border: none;
+}
+
+.btn_admin a{
+    color: #8B3144;
+}
+
+.btn_admin:hover{
+    transform: scale(1.1);
+}
+
+.btn_admin_show a {
+    color: grey;
+}
+
+.btn_admin_delete, .btn_admin_delete a {
+    color: red;
+    cursor: pointer;
+}
+
+/****DASHBOARD VITRINES****/
+.dashboard_vitrines{
+    margin: 2rem 3rem 0;
 }
 
 .dashboard_vitrines table{
@@ -864,32 +891,8 @@ iframe {
     border-radius: 0;
 }
 
-.btn_admin {
-    padding: 1rem 1.4rem;
-    margin: 0.5rem;
-    background-color: rgb(75, 168, 75, 0);
-    border: none;
-}
 
-.btn_admin a{
-    color: #8B3144;
-}
-
-.btn_admin:hover{
-    transform: scale(1.1);
-}
-
-.btn_admin_show a {
-    color: grey;
-}
-
-.btn_admin_delete, .btn_admin_delete a {
-    color: red;
-    cursor: pointer;
-}
-
-
-/*Voir vitrine*/
+/**Voir vitrine**/
 .table_show_vitrine th, td{
     border-left: 1px solid grey;
     border-right: 1px solid grey;

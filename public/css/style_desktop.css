@@ -413,11 +413,7 @@
 
     /****ADMIN****/
     /****DASHBOARD****/
-    .dashboard_container {
-        margin: 3rem 10rem;
-        display: flex;
-        align-items: flex-start;
-    }
+    
 
     .dashboard_allvitrines {
         background-color: aquamarine;

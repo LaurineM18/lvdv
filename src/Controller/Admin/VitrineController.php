@@ -28,7 +28,7 @@ class VitrineController extends AbstractController
         ]);
     }
 
-    #[Route('/new', name: 'app_vitrine_new', methods: ['GET', 'POST'])]
+    #[Route('/nouvelle-vitrine', name: 'app_vitrine_new', methods: ['GET', 'POST'])]
     public function new(Request $request, VitrineRepository $vitrineRepository, ImageService $imgService): Response
     {
         $vitrine = new Vitrine();
@@ -74,7 +74,7 @@ class VitrineController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}/edit', name: 'app_vitrine_edit', methods: ['GET', 'POST'])]
+    #[Route('/{id}/modifier', name: 'app_vitrine_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Vitrine $vitrine, VitrineRepository $vitrineRepository, ImageService $imgService): Response
     {
         $form = $this->createForm(VitrineType::class, $vitrine);

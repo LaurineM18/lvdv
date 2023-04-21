@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tableau de bord{% endblock %}
+
+{% block body %}
+    {% for label, messages in app.flashes(['success', 'error']) %}
+        {% for message in messages %}
+            <div class="{{label}}_flash">
+            <p>{{ message }}</p> 
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <div class="dashboard_container">
+        <h1>Tableau de bord</h1>
+
+        <div>
+            <h3>Les vitrines</h3>
+            <button class="btn_admin"><a href="{{ path('app_vitrine_index') }}">Gérer les vitrines</a></button>
+            <button class="btn_admin"><a href="{{ path('app_vitrine_new') }}">Enregistrer une nouvelle vitrine</a></button>
+        </div>
+
+        <div>
+            <h3>Les thèmes</h3>
+            <button class="btn_admin"><a href="{{ path('app_themes') }}">Gérer les thèmes</a></button>
+            <button class="btn_admin"><a href="{{ path('app_new_theme') }}">Enregistrer un nouveau thème</a></button>
+        </div>
+
+        <div>
+            <h3>Les formats</h3>
+            <button class="btn_admin"><a href="{{ path('app_formats') }}">Gérer les formats</a></button>
+            <button class="btn_admin"><a href="{{ path('app_new_format') }}">Enregistrer un nouveau format</a></button>
+        </div>
+
+        <div>
+            <h3>Les messages</h3>
+            <button class="btn_admin"><a href="{{ path('app_formats') }}">Gérer les messages</a></button>
+        </div>
+
+        <div>
+            <h3>Les mails (newsletter)</h3>
+            <button class="btn_admin"><a href="{{ path('app_formats') }}">Gérer les mails</a></button>
+        </div>
+
+        </div>
+    </div>
+{% endblock %}
