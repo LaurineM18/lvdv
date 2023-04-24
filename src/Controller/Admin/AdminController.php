@@ -3,10 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Format;
+use App\Entity\Mail;
 use App\Entity\Theme;
 use App\Form\FormatType;
 use App\Form\ThemeType;
 use App\Repository\FormatRepository;
+use App\Repository\MailRepository;
 use App\Repository\ThemeRepository;
 
 
@@ -116,4 +118,25 @@ class AdminController extends AbstractController
 
         return $this->redirectToRoute('app_formats', [], Response::HTTP_SEE_OTHER);
     }
+
+    #[Route('/mails', name: 'app_mails', methods: ['GET'])]
+    public function mailsNewsletter(MailRepository $mailRepository): Response
+    {
+        $mails = $mailRepository->findAll();
+
+        return $this->render('dashboard/mails.html.twig', [
+            'mails' => $mails
+        ]);
+    }
+
+    #[Route('/mail/{id}', name: 'app_delete_mail', methods: ['POST'])]
+    public function deleteMail(Request $request, Mail $mail, MailRepository $mailRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$mail->getId(), $request->request->get('_token'))) {
+            $mailRepository->remove($mail, true);
+        }
+
+        return $this->redirectToRoute('app_mails', [], Response::HTTP_SEE_OTHER);
+    }
+
 }

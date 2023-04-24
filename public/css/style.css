@@ -421,7 +421,7 @@ img {
 }
 
 
-.filter_container ul , hr{
+.filter_container ul , .filter_container hr{
     display: none;
 }
 
