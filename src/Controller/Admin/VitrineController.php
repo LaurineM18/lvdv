@@ -11,6 +11,7 @@ use App\Repository\ThemeRepository;
 use App\Services\ImageService;
 
 use App\Repository\VitrineRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -109,9 +110,16 @@ class VitrineController extends AbstractController
     }
 
     #[Route('/{id}', name: 'app_vitrine_delete', methods: ['POST'])]
-    public function delete(Request $request, Vitrine $vitrine, VitrineRepository $vitrineRepository): Response
+    public function delete(Request $request, Vitrine $vitrine, VitrineRepository $vitrineRepository, EntityManagerInterface $em): Response
     {
         if ($this->isCsrfTokenValid('delete'.$vitrine->getId(), $request->request->get('_token'))) {
+            $images = $vitrine->getImages();
+            foreach($images as $image){
+                $name = $image->getTitle();
+                unlink($this->getParameter('upload_directory').'/'.$name );
+                $em->remove($image);
+                $em->flush();
+            }
             $vitrineRepository->remove($vitrine, true);
         }
 

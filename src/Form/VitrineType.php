@@ -81,7 +81,7 @@ class VitrineType extends AbstractType
                 ],
                 'mapped' => false,
                 'multiple' => true,
-                'required' => true
+                'required' => false
             ])
         ;
     }

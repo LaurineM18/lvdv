@@ -309,9 +309,17 @@
     }
 
     .perso_container {
-        margin-top: 5rem;
+        margin: 0 auto 3rem;
+        width: 107rem;
     }
 
+    .perso_container p{
+        margin-bottom: 3rem;
+    }
+
+    .img_personalization{
+        width: 50rem;
+    }
     /*****EXPOSITION*****/
     .page_expo {
         margin: 10rem 6rem;
