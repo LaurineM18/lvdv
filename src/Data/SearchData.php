@@ -10,6 +10,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SearchData extends AbstractController
 {
     /**
+     * @var int
+     */
+    public $page = 1;
+
+    /**
      * @var string
      */
     public $q = '';

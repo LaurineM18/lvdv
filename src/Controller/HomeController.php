@@ -46,6 +46,7 @@ class HomeController extends AbstractController
     public function allVitrines(VitrineRepository $repository, Request $request): Response
     {
         $data = new SearchData();
+        $data->page = $request->get('page', 1);
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
         $listeVitrines = $repository->findSearch($data);

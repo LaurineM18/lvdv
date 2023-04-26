@@ -7,6 +7,8 @@ use App\Entity\Vitrine;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\Persistence\ManagerRegistry;
+use Knp\Component\Pager\Pagination\PaginationInterface;
+use Knp\Component\Pager\PaginatorInterface;
 
 /**
  * @extends ServiceEntityRepository<Vitrine>
@@ -18,9 +20,15 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class VitrineRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * @var PaginatorInterface
+     */
+    private $paginator;
+
+    public function __construct(ManagerRegistry $registry, PaginatorInterface $paginator)
     {
         parent::__construct($registry, Vitrine::class);
+        $this->paginator = $paginator;
     }
 
     public function save(Vitrine $entity, bool $flush = false): void
@@ -43,9 +51,9 @@ class VitrineRepository extends ServiceEntityRepository
 
     /**
      * Récupère les produits en lien avec une recherche
-     * @return Vitrine[]
+     * @return PaginationInterface
      */
-    public function findSearch(SearchData $search): array
+    public function findSearch(SearchData $search): PaginationInterface
     {
         $query = $this
             ->createQueryBuilder('p')
@@ -80,7 +88,12 @@ class VitrineRepository extends ServiceEntityRepository
                 ->setParameter('format', $search->format);
         }
 
-        return $query->getQuery()->getResult();
+        $query = $query->getQuery();
+        return $this->paginator->paginate(
+            $query,
+            $search->page,
+            6
+        );
     }
 
 //    /**

@@ -511,6 +511,27 @@ img {
     margin-right: 1rem;
 }
 
+.pagination{
+    text-align: center;
+    margin: 2rem 0 0 32rem;
+    font-size: 1.6rem;
+    font-family: 'Avenir';
+}
+
+.pagination .current{
+    color: #ffa578;
+    text-decoration: underline;
+}
+
+.pagination .page a, 
+.pagination .next a, 
+.pagination .last a, 
+.pagination .previous a, 
+.pagination .first a{
+    color: #8B3144;
+    margin: 0.5rem;
+}
+
 /*****1 VITRINE*****/
 .showdetail_page{
     margin: 6rem;
