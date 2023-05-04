@@ -449,9 +449,12 @@ img {
 
 
 .cards_vitrines_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
 }
 
 .card {
@@ -461,7 +464,6 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2rem;
     width: 30rem;
 }
 
@@ -513,7 +515,6 @@ img {
 
 .pagination{
     text-align: center;
-    margin: 2rem 0 0 32rem;
     font-size: 1.6rem;
     font-family: 'Avenir';
 }

@@ -93,6 +93,10 @@
         text-align: center;
     }
 
+    .cards_vitrines_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     /*****PERSONNALISATION*****/
     .page_perso {
         margin: 5rem 6rem;

@@ -4,13 +4,8 @@
 {% block title %}Page d'accueil{% endblock %}
 
 {% block body %}
-{% for label, messages in app.flashes(['success', 'error']) %}
-        {% for message in messages %}
-            <div class="{{label}}_flash">
-            <p>{{ message }}</p> 
-            </div>
-        {% endfor %}
-{% endfor %}
+    {% include '_flashes.html.twig' %}
+
     <div class='home_container'>
         <section class='heroheader'>
             <div class='bcg_vitrine'>

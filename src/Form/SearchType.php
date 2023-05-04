@@ -3,8 +3,9 @@
 namespace App\Form;
 
 use App\Entity\Theme;
-use App\Data\SearchData;
 use App\Entity\Format;
+use App\Data\SearchData;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -35,6 +36,10 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ])
         ->add('theme',  EntityType::class, [
             'class' => Theme::class,
+            'query_builder' => function (EntityRepository $er) {
+                return $er->createQueryBuilder('t')
+                    ->orderBy('t.name', 'ASC');
+            },
             'label' => 'Thèmes ',
             'multiple' => true,
             'expanded' => true,
@@ -42,6 +47,10 @@ public function buildForm(FormBuilderInterface $builder, array $options)
         ])
         ->add('format',  EntityType::class, [
             'class' => Format::class,
+            'query_builder' => function (EntityRepository $er) {
+                return $er->createQueryBuilder('f')
+                    ->orderBy('f.name', 'ASC');
+            },
             'label' => 'Format ',
             'attr' => [
                 'class' => 'input'

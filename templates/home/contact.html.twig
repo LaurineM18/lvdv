@@ -5,13 +5,9 @@
 
 {% block body %}
 
-    {% for label, messages in app.flashes(['success', 'error']) %}
-        {% for message in messages %}
-            <div class="{{label}}_flash">
-            <p>{{ message }}</p> 
-            </div>
-        {% endfor %}
-    {% endfor %}
+    {% include '_flashes.html.twig' %}
+
+
     <div class='contact_container'>
         <div class='coordonnees_container'>
             <h1>Coordonnées</h1>

@@ -3,13 +3,8 @@
 {% block title %}Tableau de bord{% endblock %}
 
 {% block body %}
-    {% for label, messages in app.flashes(['success', 'error']) %}
-        {% for message in messages %}
-            <div class="{{label}}_flash">
-            <p>{{ message }}</p> 
-            </div>
-        {% endfor %}
-    {% endfor %}
+     {% include '_flashes.html.twig' %}
+
     <div class="dashboard_vitrines">
         <a class="dashboard_link" href="{{ path('app_dashboard_index') }}">Retour au tableau de bord</a>
         <h1>Toutes les Vitrines</h1>
