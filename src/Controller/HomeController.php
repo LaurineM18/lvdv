@@ -139,4 +139,10 @@ class HomeController extends AbstractController
         return $this->render('home/faq.html.twig');
     }
 
+    #[Route('/mentions-legales', name: 'app_termsofUse')]
+    public function termsOfUse(): Response
+    {
+        return $this->render('home/termsOfUse.html.twig');
+    }
+
 }

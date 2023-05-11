@@ -35,14 +35,15 @@
                 <p>Voici mes toutes dernières créations, pièces uniques inspirées par mes récentes trouvailles ou réalisations de commandes.  </p>
             </div>
             <div class="carousel_container">
-                <img class='img-carousel' src="{{ asset('/assets/img/koalas.jpg') }}" alt="Vitrine Koalas" />
-                <img class='img-carousel' src="{{ asset('/assets/img/BonhommeNeige.JPG') }}" alt="Vitrine Koalas" />
-                <img class='img-carousel' src="{{ asset('/assets/img/CerfPrintanier.JPG') }}" alt="Vitrine Koalas" />
+                <img class='img-carousel' src="{{ asset('/assets/img/new/1.JPG') }}" alt="Nouveauté Vitrine - Lapin" />
+                <img class='img-carousel' src="{{ asset('/assets/img/new/2.JPG') }}" alt="Nouveauté Vitrine - Sirène" />
+                <img class='img-carousel' src="{{ asset('/assets/img/new/3.JPG') }}" alt="Nouveauté Vitrine - Chat" />
+                <img class='img-carousel' src="{{ asset('/assets/img/new/4.JPG') }}" alt="Nouveauté Vitrine - Hamster" />
             </div>
                 <button class="carousel-next"><img src="{{ asset('/assets/img/chevron-right.png') }}" alt=""></button>
                 <button class="carousel-previous"><img src="{{ asset('/assets/img/chevron-left.png') }}" alt=""></button>
             <button class='btn btn_news'>
-                <a href="">Voir toutes les nouveautés</a>
+                <a href="{{ path('app_new_vitrines') }}">Voir toutes les nouveautés</a>
             </button>
             <div class="decoration_down"></div>
         </section>

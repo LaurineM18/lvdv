@@ -20,3 +20,4 @@
 ###< symfony/phpunit-bridge ###
 
 /public/upload
+/templates/home/termsofUse.html.twig

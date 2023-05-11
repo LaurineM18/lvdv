@@ -1,4 +1,4 @@
-@media screen and (min-width:768px) and (max-width:1223px) {
+@media screen and (max-width:1024px) and (min-width:769px){
     .navbar_mobile {
         margin: 0;
         padding: 5rem;
@@ -11,20 +11,12 @@
     .modal {
         height: 100vh;
         width: 50%;
+        background-color: rebeccapurple;
     }
 
     /*****FOOTER*****/
     .decoration_footer {
-        display: block;
-        width: 16rem;
-        height: 20rem;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-image: url(/assets/img/Stripes.png);
-        position: absolute;
-        right: -0.2rem;
-        bottom: 9rem;
-        z-index: -5;
+        display: none;
     }
 
     /*****HOME*****/
@@ -61,12 +53,12 @@
     /*CAROUSEL*/
     .carousel-next,
     .carousel-previous {
-        right: 10rem;
+        right: 9rem;
     }
 
     .carousel-previous {
         right: auto;
-        left: 10rem;
+        left: 9rem;
     }
 
 

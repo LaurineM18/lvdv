@@ -19,6 +19,8 @@
                     <th>Nouveauté ?</th>
                     <th>Prix</th>
                     <th>Disponible ?</th>
+                    <th>Format</th>
+                    <th>Thème</th>
                     <th>Description</th>
                     <th>Photo</th>
                     <th>Actions</th>
@@ -32,6 +34,8 @@
                     <td>{{ vitrine.New ? 'Oui' : 'Non' }}</td>
                     <td>{{ vitrine.Price }} €</td>
                     <td>{{ vitrine.Available ? 'Oui' : 'Non' }}</td>
+                    <td>{{ vitrine.format}}</td>
+                    <td>{{ vitrine.theme }}</td>
                     <td>{{ vitrine.Description }}</td>
                     <td>{% for image in vitrine.images %}
                 <img class="img_dashboard"src="{{ asset('/upload/' ~ image.title) }}" alt="">

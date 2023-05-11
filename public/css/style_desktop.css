@@ -1,4 +1,13 @@
-@media screen and (min-width: 1224px) {
+@media screen and (min-width: 1025px) {
+    html {
+        height: 100%;
+        font-size: 62.5%;
+    }
+    
+    body {
+        font-size: 1.4rem;
+    }
+
     .navbar_mobile_container {
         display: none;
     }
@@ -37,7 +46,7 @@
         padding: 43px 20px;
         color: white;
         font-size: 2rem;
-        font-family: 'Avenir', Roboto, monospace
+        font-family: 'Avenir', 'Nunito', 'Roboto', sans-serif;
     }
 
     .navlinks_container .onglet:hover {
@@ -188,6 +197,13 @@
     .carousel {
         margin: 0 150px;
     }
+
+    .carousel-next img, 
+    .carousel-previous img{
+        width: 40px;
+        height: 40px;
+    }
+
     .carousel-next {
         right: 20rem;
     }
@@ -204,6 +220,14 @@
     .infos_expo {
         flex-direction: row;
         margin: 10rem;
+    }
+
+    .infos_expo .flyer {
+        display: block;
+        text-align: center;
+        width: 100%;
+        border-radius: 0;
+        margin: 1rem;
     }
 
     .text-expo {
@@ -272,6 +296,10 @@
     .cards_vitrines_container {
         grid-template-columns: repeat(3, 1fr);
         margin-top: 0;
+    }
+
+    .card {
+        width: 30rem;
     }
 
     .pagination{
