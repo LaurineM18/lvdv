@@ -8,7 +8,7 @@ use App\Entity\Vitrine;
 use App\Form\ThemeType;
 use App\Form\VitrineType;
 use App\Repository\ThemeRepository;
-use App\Services\ImageService;
+
 
 use App\Repository\VitrineRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -30,7 +30,7 @@ class VitrineController extends AbstractController
     }
 
     #[Route('/nouvelle-vitrine', name: 'app_vitrine_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, VitrineRepository $vitrineRepository, ImageService $imgService): Response
+    public function new(Request $request, VitrineRepository $vitrineRepository): Response
     {
         $vitrine = new Vitrine();
         $form = $this->createForm(VitrineType::class, $vitrine);
@@ -76,7 +76,7 @@ class VitrineController extends AbstractController
     }
 
     #[Route('/{id}/modifier', name: 'app_vitrine_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Vitrine $vitrine, VitrineRepository $vitrineRepository, ImageService $imgService): Response
+    public function edit(Request $request, Vitrine $vitrine, VitrineRepository $vitrineRepository): Response
     {
         $form = $this->createForm(VitrineType::class, $vitrine);
         $form->handleRequest($request);

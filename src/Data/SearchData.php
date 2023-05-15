@@ -4,7 +4,6 @@ namespace App\Data;
 
 use App\Entity\Theme;
 use App\Entity\Format;
-use phpDocumentor\Reflection\Types\Boolean;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SearchData extends AbstractController

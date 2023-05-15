@@ -12,15 +12,17 @@ use App\Form\SearchType;
 use App\Repository\ContactRepository;
 use App\Repository\MailRepository;
 use App\Repository\VitrineRepository;
+use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(MailRepository $mailRepository, Request $request): Response
+    public function index(MailRepository $mailRepository, Request $request, MailerInterface $mailer): Response
     {
         $mail = new Mail();
         $form = $this->createForm(MailType::class, $mail);
@@ -29,9 +31,17 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $mailRepository->save($mail, true);
 
+            $email = (new TemplatedEmail())
+                ->from($mail->getMail())
+                ->to('laurine.mencias@gmail.com')
+                ->htmlTemplate('emails/emailNewsletter.html.twig')
+                ;
+
+            $mailer->send($email);
+
             $this->addFlash(
                 'success',
-                'Votre message a bien été envoyé !'
+                'Votre adresse mail a bien été enregistrée !'
             );
 
             return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
@@ -88,7 +98,7 @@ class HomeController extends AbstractController
 
 
     #[Route('/expositions', name: 'app_expositions')]
-    public function expo(MailRepository $mailRepository, Request $request): Response
+    public function expo(MailRepository $mailRepository, Request $request, MailerInterface $mailer): Response
     {
         $mail = new Mail();
         $form = $this->createForm(MailType::class, $mail);
@@ -97,9 +107,17 @@ class HomeController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $mailRepository->save($mail, true);
 
+            $email = (new TemplatedEmail())
+                ->from($mail->getMail())
+                ->to('laurine.mencias@gmail.com')
+                ->htmlTemplate('emails/emailNewsletter.html.twig')
+                ;
+
+            $mailer->send($email);
+
             $this->addFlash(
                 'success',
-                'Votre message a bien été envoyé !'
+                'Votre adresse mail a bien été enregistrée !'
             );
 
             return $this->redirectToRoute('app_expositions', [], Response::HTTP_SEE_OTHER);
@@ -111,7 +129,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/contact', name: 'app_contact')]
-    public function contact(Request $request, ContactRepository $contactRepository): Response
+    public function contact(Request $request, ContactRepository $contactRepository, MailerInterface $mailer): Response
     {
         $contact = new Contact();
         $formContact = $this->createForm(ContactType::class, $contact);
@@ -119,6 +137,18 @@ class HomeController extends AbstractController
 
         if ($formContact->isSubmitted() && $formContact->isValid()) {
             $contactRepository->save($contact, true);
+
+            $email = (new TemplatedEmail())
+                ->from($contact->getEmail())
+                ->to('laurine.mencias@gmail.com')
+                ->subject($contact->getSubject())
+                ->htmlTemplate('emails/emailContact.html.twig')
+                ->context([
+                    'lastname' => $contact->getLastname(),
+                    'message' => $contact->getMessage()
+                ]);
+
+            $mailer->send($email);
 
             $this->addFlash(
                 'success',
