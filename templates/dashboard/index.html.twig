@@ -6,35 +6,35 @@
     {% include '_flashes.html.twig' %}
 
     <div class="dashboard_container">
-    <button class="btn"><a href="{{ path('app_logout') }}">Se déconnecter</a></button>
+    <a class="link" href="{{ path('app_logout') }}">Se déconnecter</a>
         <h1>Tableau de bord</h1>
 
         <div>
             <h3>Les vitrines</h3>
-            <button class="btn_admin"><a href="{{ path('app_vitrine_index') }}">Gérer les vitrines</a></button>
-            <button class="btn_admin"><a href="{{ path('app_vitrine_new') }}">Enregistrer une nouvelle vitrine</a></button>
+            <a class="link_admin" href="{{ path('app_vitrine_index') }}">Gérer les vitrines</a>
+            <a class="link_admin" href="{{ path('app_vitrine_new') }}">Enregistrer une nouvelle vitrine</a>
         </div>
 
         <div>
             <h3>Les thèmes</h3>
-            <button class="btn_admin"><a href="{{ path('app_themes') }}">Gérer les thèmes</a></button>
-            <button class="btn_admin"><a href="{{ path('app_new_theme') }}">Enregistrer un nouveau thème</a></button>
+            <a class="link_admin" href="{{ path('app_themes') }}">Gérer les thèmes</a>
+           <a class="link_admin" href="{{ path('app_new_theme') }}">Enregistrer un nouveau thème</a>
         </div>
 
         <div>
             <h3>Les formats</h3>
-            <button class="btn_admin"><a href="{{ path('app_formats') }}">Gérer les formats</a></button>
-            <button class="btn_admin"><a href="{{ path('app_new_format') }}">Enregistrer un nouveau format</a></button>
+            <a class="link_admin" href="{{ path('app_formats') }}">Gérer les formats</a>
+            <a class="link_admin" href="{{ path('app_new_format') }}">Enregistrer un nouveau format</a>
         </div>
 
         <div>
             <h3>Les messages</h3>
-            <button class="btn_admin"><a href="{{ path('app_admin_contact') }}">Gérer les messages</a></button>
+            <a class="link_admin" href="{{ path('app_admin_contact') }}">Gérer les messages</a>
         </div>
 
         <div>
             <h3>Les mails (newsletter)</h3>
-            <button class="btn_admin"><a href="{{ path('app_mails') }}">Gérer les mails</a></button>
+            <a class="link_admin" href="{{ path('app_mails') }}">Gérer les mails</a>
         </div>
 
         </div>

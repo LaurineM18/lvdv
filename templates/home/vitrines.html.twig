@@ -15,7 +15,7 @@
             <p>Filtres</p>
             {{form_start(form)}}
                 <div class="search">
-                    {{form_row(form.q)}} <button type="submit" class="btn_search"><img src="{{asset('/assets/img/search.png')}}" alt=""></button>
+                    {{form_row(form.q)}} <button type="submit" class="btn_search"><img src="{{asset('/assets/img/search.png')}}" alt="Icone de recherche"></button>
                 </div>
 
                 {{form_row(form.new)}}
@@ -37,7 +37,7 @@
 
 
             <button type="submit" class="btn btn_filter">Filtrer</button>
-            <button type="submit" class="btn btn_filter"><a href="{{ path('app_vitrines') }}">Tout réinitialiser</a></button>
+            <a class="link_filter" href="{{ path('app_vitrines') }}">Tout réinitialiser</a>
             {{form_end(form)}}
             </div>
 
@@ -49,10 +49,9 @@
                     {% endfor %}
                     <p class='title_vitrine'>{{vitrine.name}}</p>
                     <p class='price_vitrine'>{{vitrine.price}} €</p>
-                    <button class='btn_detail_vitrine'>
-                        <a href="{{path('app_show_vitrine', {'id': vitrine.id})}}" class="link_detail_vitrine"><img class='eye_png' src='{{ asset('/assets/img/eye.png') }}'></img>Voir
+                    <a href="{{path('app_show_vitrine', {'id': vitrine.id})}}" class="link_detail_vitrine"><img class='eye_png' src='{{ asset('/assets/img/eye.png') }}'></img>Voir
                             la fiche</a>
-                    </button>
+
                 </div>
             {% endfor %}
         </div>

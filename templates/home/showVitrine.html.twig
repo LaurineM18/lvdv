@@ -8,7 +8,7 @@
     <div class="detail_container">
        <div class="carousel_container">
             {% for image in vitrine.images %}
-            <img class="img-carousel"src="{{ asset('/upload/' ~ image.title) }}" alt="Vitrine {{image.title}}">
+            <img class="img-carousel" src="{{ asset('/upload/' ~ image.title) }}" alt="Vitrine {{image.title}}">
             {% endfor %}
         </div>
         <button class="carousel-next"><img src="{{ asset('/assets/img/chevron-right.png') }}" alt=""></button>
@@ -24,9 +24,9 @@
             </div>
             <div class="contact_condition">
                 <p>Intéressé(e) par cette vitrine ?</p>
-                <button class='btn btn_contact'>
-                    <a href="{{path('app_contact')}}">Contactez-moi</a>
-                </button>
+
+                    <a class="link link_contact" href="{{path('app_contact')}}">Contactez-moi</a>
+
             </div>
                 {% else %}
                 <p>Vitrine indisponible</p>
@@ -34,12 +34,9 @@
                 {% endif %}
         </div>
     </div>
-    <button class='btn btn_back'>
-        <a href="{{path('app_vitrines')}}">Retour - Toutes les vitrines</a>
-    </button>
-    <button class='btn btn_back'>
-        <a href="{{path('app_new_vitrines')}}">Toutes les nouveautés</a>
-    </button>
+        <a class="link link_back" href="{{path('app_vitrines')}}">Retour - Toutes les vitrines</a>
+        <a class="link link_back" href="{{path('app_new_vitrines')}}">Toutes les nouveautés</a>
+
 </div>
         
         

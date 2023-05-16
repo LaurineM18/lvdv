@@ -12,7 +12,7 @@
         <li>{{format}} 
         <form method="post" action="{{ path('app_delete_format', {'id': format.id}) }}" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cet élément ?');">
             <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ format.id) }}">
-            <button class=" btn_admin btn_admin_delete">X Supprimer</button>
+            <button class="btn_admin btn_admin_delete">X Supprimer</button>
         </form>
         </li>
         

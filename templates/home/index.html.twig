@@ -19,11 +19,8 @@
                     Différents thèmes prennent vie dans mes créations en perpétuelle évolution : noël, peinture, couture, voyages, boutiques etc… <br>
                     Vous trouverez sûrement un thème qui vous enchantera et dans le cas contraire, la personnalisation est possible sur demande, idée de cadeau pour un anniversaire, un événement (mariage, naissance, retraite etc.) ou tout simplement pour faire plaisir. </p>
                 <div class='heroheader_btn_container'>
-                    <button class='btn btn_allVitrines'>
-                        <a href="{{path('app_vitrines')}}">Toutes les vitrines</a>
-                    </button>
-                    <button class='btn btn_personnalisation'>
-                        <a href="{{path('app_personalization_vitrines')}}">La personnalisation</a>
+                    <a class="link link_allVitrines" href="{{path('app_vitrines')}}">Toutes les vitrines</a>
+                    <a class="link link_personnalisation" href="{{path('app_personalization_vitrines')}}">La personnalisation</a>
                     </button>
                 </div>
             </div>
@@ -42,9 +39,7 @@
             </div>
                 <button class="carousel-next"><img src="{{ asset('/assets/img/chevron-right.png') }}" alt=""></button>
                 <button class="carousel-previous"><img src="{{ asset('/assets/img/chevron-left.png') }}" alt=""></button>
-            <button class='btn btn_news'>
-                <a href="{{ path('app_new_vitrines') }}">Voir toutes les nouveautés</a>
-            </button>
+                <a class="link link_news" href="{{ path('app_new_vitrines') }}">Voir toutes les nouveautés</a>
             <div class="decoration_down"></div>
         </section>
         <section class='expo'>
