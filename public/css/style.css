@@ -13,6 +13,7 @@ body {
     font-size: 1rem;
     min-height: 100%;
     padding-bottom: 13rem;
+    font-family: 'Avenir', 'Nunito Sans', 'Roboto', sans-serif;
 }
 
 h1,
@@ -44,7 +45,7 @@ h3 {
     src: local("Fjord-Bold"), url("../assets/fonts/Fjord-Bold.otf") format(opentype);
 }
 
-p, li , a {
+p, li , a , .btn{
     font-family: 'Nunito Sans', 'Roboto', sans-serif;
     text-align: justify;
 }
@@ -87,6 +88,10 @@ img {
     background-color: rgb(75, 168, 75, 0.3);
     padding: 1rem;
     font-size: 1.5rem;
+}
+
+.margin_page {
+    margin: 5rem 2rem 3rem;
 }
 
 /***** NAVBAR*****/
@@ -143,7 +148,6 @@ img {
     padding: 1rem;
     color: white;
     font-size: 2rem;
-    font-family: 'Avenir', 'Nunito Sans', 'Roboto', sans-serif;
 }
 
 .modal a:active {
@@ -179,7 +183,6 @@ img {
 }
 
 .footerlinks_container a {
-    font-family: 'Avenir', 'Nunito Sans', 'Roboto', sans-serif;
     color: white;
 }
 
@@ -368,9 +371,7 @@ img {
 
 
 /*****VITRINES*****/
-.page_vitrines {
-    margin: 5rem 2rem 3rem;
-}
+
 
 .vitrines_container {
     display: flex;
@@ -398,7 +399,6 @@ img {
 }
 
 .filter_container label {
-    font-family: 'Avenir', 'Nunito Sans', 'Roboto', sans-serif;
     margin-right: 0.5rem;
     font-size: 1.2rem;
     line-height: 2.5rem;
@@ -486,7 +486,6 @@ img {
 
 .link_detail_vitrine {
     color: #ffa578;
-    font-family: "Avenir";
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -502,7 +501,6 @@ img {
 .pagination{
     text-align: center;
     font-size: 1.3rem;
-    font-family: 'Avenir';
 }
 
 .pagination .current{
@@ -589,10 +587,6 @@ img {
 }
 
 /*****PERSONNALISATION*****/
-.page_perso {
-    margin: 5rem 2rem 3rem;
-}
-
 .page_perso > h1{
     font-size: 2.1rem;
 }
@@ -636,10 +630,6 @@ img {
 
 
 /*****EXPOSITION*****/
-.page_expo {
-    margin: 5rem 2rem 3rem;
-}
-
 .expo_container {
     display: flex;
     flex-direction: column;
@@ -684,7 +674,6 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5rem 2rem 3rem;
 }
 
 .coordonnees_container {
@@ -705,7 +694,6 @@ iframe {
 }
 
  label {
-    font-family: 'Avenir', 'Nunito Sans', 'Roboto', sans-serif;
     font-size: 1.2rem;
     color: black;
 }
@@ -754,7 +742,6 @@ iframe {
 
 
 .btn_form {
-    font-family: 'Avenir', 'Nunito Sans', 'Roboto', sans-serif;
     background-color: #ffa578;
     font-weight: 700;
     font-size: 1rem;
@@ -762,11 +749,6 @@ iframe {
 }
 
 /*****FAQ*****/
-.faq_container {
-    margin: 5rem 2rem 3rem;
-
-}
-
 .faq{
     margin-top: 3rem;
 }
@@ -802,10 +784,6 @@ iframe {
 
 
 /*****MENTIONS LEGALES*****/
-.page_termsOfUse{
-    margin: 5rem 2rem 3rem;
-}
-
 .page_termsOfUse > h2{
     margin-top: 2rem;
 }
@@ -833,7 +811,6 @@ iframe {
 }
 
 .dashboard_link{
-    font-family: 'Avenir', 'Nunito Sans', 'Roboto', sans-serif;
     font-size: 1.6rem;
     color: black;
     text-decoration: underline;
@@ -877,7 +854,6 @@ iframe {
 }
 
 .dashboard_vitrines table{
-    font-family: 'Avenir', 'Nunito Sans', 'Roboto', sans-serif;
     margin: 2rem auto;
     border-collapse: collapse;
 }
@@ -938,7 +914,7 @@ iframe {
         width: 50%;
     }
 
-    .page_vitrines, .showdetail_page, .page_perso, .page_expo, .contact_container, .faq_container, .page_termsOfUse{
+    .margin_page {
         margin: 5rem 6rem;
     }
     
@@ -1089,6 +1065,10 @@ iframe {
         display: none;
     }
 
+    .margin_page {
+        margin: 10rem 6rem;
+    }
+
     /**Navbar Desktop**/
     .navbar_container {
         border-bottom: 3px solid #8B3144;
@@ -1129,7 +1109,6 @@ iframe {
         padding: 43px 20px;
         color: white;
         font-size: 2rem;
-        font-family: 'Avenir', 'Nunito', 'Roboto', sans-serif;
     }
 
     .navlinks_container .onglet:hover {
@@ -1316,14 +1295,6 @@ iframe {
     }
 
     /*****VITRINES*****/
-    .page_vitrines {
-        margin: 10rem 6rem;
-    }
-
-    .page_vitrines>p {
-        text-align: center;
-    }
-
     .vitrines_container {
         flex-direction: row;
         align-items: start;
@@ -1415,11 +1386,8 @@ iframe {
         font-size: 1.6rem;
     }
 
-    /*****1 VITRINE*****/
-    .showdetail_page {
-        margin: 10rem 6rem;
-    }
 
+    /*****1 VITRINE*****/
     .detail_container{
         display: flex;
         flex-direction: row;
@@ -1459,12 +1427,8 @@ iframe {
 
 
     /*****PERSONNALISATION*****/
-    .page_perso {
-        margin: 10rem 6rem;
-    }
-
     .page_perso > h1 {
-        font-size: 3rem;
+        font-size: 4rem;
     }
 
     .perso_container {
@@ -1486,10 +1450,6 @@ iframe {
 
 
     /*****EXPOSITION*****/
-    .page_expo {
-        margin: 10rem 6rem;
-    }
-
     .expo_container {
         margin-top: 5rem;
     }
@@ -1517,7 +1477,6 @@ iframe {
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-        margin: 10rem 6rem;
     }
 
     .coordonnees_container{
@@ -1572,9 +1531,6 @@ iframe {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-    .faq_container p{
-       text-align: center;
     }
 
     .faq {
