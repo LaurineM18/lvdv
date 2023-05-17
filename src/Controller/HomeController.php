@@ -28,7 +28,7 @@ class HomeController extends AbstractController
         $form = $this->createForm(MailType::class, $mail);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && empty($form['other']->getData())) {
             $mailRepository->save($mail, true);
 
             $email = (new TemplatedEmail())
@@ -104,7 +104,7 @@ class HomeController extends AbstractController
         $form = $this->createForm(MailType::class, $mail);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && empty($form['other']->getData())) {
             $mailRepository->save($mail, true);
 
             $email = (new TemplatedEmail())
@@ -135,7 +135,7 @@ class HomeController extends AbstractController
         $formContact = $this->createForm(ContactType::class, $contact);
         $formContact->handleRequest($request);
 
-        if ($formContact->isSubmitted() && $formContact->isValid()) {
+        if ($formContact->isSubmitted() && $formContact->isValid() && empty($formContact['other']->getData())) {
             $contactRepository->save($contact, true);
 
             $email = (new TemplatedEmail())

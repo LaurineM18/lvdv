@@ -423,7 +423,7 @@ img {
 .btn_filter{
     background-color: rgb(255, 255, 255);
     color: #ffa578;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     padding: 0.5rem;
     margin-top: 1rem;
     margin-right: 0.5rem;
@@ -898,7 +898,7 @@ iframe {
 
 
 /********************TABLET********************/
-@media screen and (min-width:1000px) and (max-width:1024px){
+@media screen and (min-width:481px) and (max-width:768px){
     .navbar_mobile {
         margin: 0;
         padding: 5rem;
@@ -1035,7 +1035,7 @@ iframe {
 
 
 /********************DESKTOP********************/
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 769px) {
     html {
         height: 100%;
         font-size: 62.5%;
@@ -1106,7 +1106,7 @@ iframe {
     }
 
     .navlinks_container a {
-        padding: 43px 20px;
+        padding: 4.5rem 2rem;
         color: white;
         font-size: 2rem;
     }
@@ -1280,7 +1280,8 @@ iframe {
     .infos_expo .flyer {
         display: block;
         text-align: center;
-        width: 100%;
+        width: 30%;
+        height: 30%;
         border-radius: 0;
         margin: 1rem;
     }
@@ -1364,6 +1365,11 @@ iframe {
 
     .btn_filter{
         margin-top: 1rem;
+        font-size: 1.8rem;
+    }
+
+    .link_filter{
+        font-size: 1.4rem;
     }
 
     .cards_vitrines_container {
