@@ -898,7 +898,7 @@ iframe {
 
 
 /********************TABLET********************/
-@media screen and (min-width:481px) and (max-width:768px){
+@media screen and (min-width:481px) and (max-width:1024px){
     .navbar_mobile {
         margin: 0;
         padding: 5rem;
@@ -912,6 +912,7 @@ iframe {
     .modal {
         height: 100vh;
         width: 50%;
+        background-color: #ffa578;
     }
 
     .margin_page {
@@ -956,12 +957,12 @@ iframe {
     /*CAROUSEL*/
     .carousel-next,
     .carousel-previous {
-        right: 9rem;
+        right: 7rem;
     }
 
     .carousel-previous {
         right: auto;
-        left: 9rem;
+        left: 7rem;
     }
 
 
@@ -974,7 +975,8 @@ iframe {
 
     .infos_expo .flyer {
         display: block;
-        width: 100%;
+        width: 30%;
+        height: 30%;
         border-radius: 0;
     }
 
@@ -991,9 +993,17 @@ iframe {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /*****VITRINES*****/
+    /*****1 VITRINE*****/
     .detail_container .carousel .img-carousel{
-        width: 35rem;
+        width: 32rem;
+    }
+
+    .detail_container .carousel .carousel-next{
+        right: 0;
+    }
+
+    .detail_container .carousel .carousel-previous{
+        left: 0;
     }
 
     /*****EXPOSITION*****/
@@ -1034,8 +1044,9 @@ iframe {
 
 
 
+
 /********************DESKTOP********************/
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1025px) {
     html {
         height: 100%;
         font-size: 62.5%;
@@ -1375,6 +1386,7 @@ iframe {
     .cards_vitrines_container {
         grid-template-columns: repeat(3, 1fr);
         margin-top: 0;
+        gap: 3rem;
     }
 
     .card {
@@ -1414,11 +1426,11 @@ iframe {
     }
 
     .detail_container .carousel .carousel-next{
-        right: 0;
+        right: 1rem;
     }
 
     .detail_container .carousel .carousel-previous{
-        left: 0;
+        left: 1rem;
     }
 
     .detail_container > div{
