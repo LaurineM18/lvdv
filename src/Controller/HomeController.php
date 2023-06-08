@@ -88,10 +88,12 @@ class HomeController extends AbstractController
 
 
     #[Route('/vitrine/{id}', name: 'app_show_vitrine')]
-    public function showVitrine(Vitrine $vitrine): Response
+    public function showVitrine(Vitrine $vitrine, Request $request): Response
     {
+        $previousUrl = $request->headers->get('referer');
         return $this->render('home/showVitrine.html.twig', [
-            'vitrine' => $vitrine
+            'vitrine' => $vitrine,
+            'previousUrl' => $previousUrl
         ]);
     }
 
