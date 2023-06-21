@@ -53,7 +53,7 @@ class VitrineRepository extends ServiceEntityRepository
      * Récupère les produits en lien avec une recherche
      * @return PaginationInterface
      */
-    public function findSearch(SearchData $search): PaginationInterface
+    public function findSearch(SearchData $search, $nb): PaginationInterface
     {
         $query = $this
             ->createQueryBuilder('p')
@@ -92,8 +92,16 @@ class VitrineRepository extends ServiceEntityRepository
         return $this->paginator->paginate(
             $query,
             $search->page,
-            9
+            $nb
         );
+    }
+
+    public function orderByDesc() : array
+    {
+        $qb = $this->createQueryBuilder('p')
+        ->orderBy('p.id', 'DESC');
+
+        return $qb->getQuery()->getResult(); 
     }
 
 //    /**

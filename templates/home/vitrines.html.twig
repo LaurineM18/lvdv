@@ -6,9 +6,7 @@
 {% block body %}
 <div class='page_vitrines margin_page'>
     <h1>Les Vitrines</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate placeat fugiat sint illum. Modi,
-            voluptatem esse. Quaerat consectetur nam veniam debitis cupiditate, fugit, assumenda perferendis, corrupti
-            exercitationem modi qui aspernatur!</p>
+    <p>Voici une partie de mes réalisations. Vous retrouvez des nouveautés, des vitrines aux formats multiples (cloches, terrariums, boîtages en carton plume...), certaines personnalisations qui m'ont été commandées. N'hésitez pas à utiliser les filtres pour affiner vos recherches.</p>
     <div class='vitrines_container'>
 
         <div class='filter_container'>
@@ -37,7 +35,7 @@
 
 
             <button type="submit" class="btn btn_filter">Filtrer</button>
-            <a class="link_filter" href="{{ path('app_vitrines') }}">Tout réinitialiser</a>
+            <a class="link_filter" href="{{ path('app_vitrines', {'new' : 'toutes-les-vitrines'}) }}">Tout réinitialiser</a>
             {{form_end(form)}}
             </div>
 

@@ -21,3 +21,5 @@
 
 /public/upload
 /templates/home/termsofUse.html.twig
+/.htaccess
+/.env.prod

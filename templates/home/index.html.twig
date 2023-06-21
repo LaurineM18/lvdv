@@ -16,10 +16,10 @@
                 <h1 id="title_desktop">Bienvenue dans un univers de miniatures !</h1>
                 <p>Passionnée depuis des années, je réalise des petites vitrines qui racontent une histoire sortie de mon imagination.
                     Ces mises en scène trouvent leur place dans différents écrins : cloche en verre, terrarium, boîte en carton plume faite main ou encore objets chinés et détournés.
-                    Différents thèmes prennent vie dans mes créations en perpétuelle évolution : noël, peinture, couture, voyages, boutiques etc… <br>
-                    Vous trouverez sûrement un thème qui vous enchantera et dans le cas contraire, la personnalisation est possible sur demande, idée de cadeau pour un anniversaire, un événement (mariage, naissance, retraite etc.) ou tout simplement pour faire plaisir. </p>
+                    Différents thèmes prennent vie dans mes créations en perpétuelle évolution : noël, peinture, couture, voyages, boutiques, etc. <br>
+                    Vous trouverez sûrement un thème qui vous enchantera et dans le cas contraire, la personnalisation est possible sur demande, idée de cadeau pour un anniversaire, un événement (mariage, naissance, retraite, etc.) ou tout simplement pour faire plaisir. </p>
                 <div class='heroheader_btn_container'>
-                    <a class="link link_allVitrines" href="{{path('app_vitrines')}}">Toutes les vitrines</a>
+                    <a class="link link_allVitrines" href="{{path('app_vitrines', {'new' : 'toutes-les-vitrines'})}}">Toutes les vitrines</a>
                     <a class="link link_personnalisation" href="{{path('app_personalization_vitrines')}}">La personnalisation</a>
                     </button>
                 </div>
@@ -39,7 +39,7 @@
             </div>
                 <button class="carousel-next"><img src="{{ asset('/assets/img/chevron-right.png') }}" alt=""></button>
                 <button class="carousel-previous"><img src="{{ asset('/assets/img/chevron-left.png') }}" alt=""></button>
-                <a class="link link_news" href="{{ path('app_new_vitrines') }}">Voir toutes les nouveautés</a>
+                <a class="link link_news" href="{{ path('app_vitrines', {'new' : 'nouveautes'}) }}">Voir toutes les nouveautés</a>
             <div class="decoration_down"></div>
         </section>
         <section class='expo'>

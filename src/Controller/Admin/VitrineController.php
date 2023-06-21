@@ -25,7 +25,7 @@ class VitrineController extends AbstractController
     public function index(VitrineRepository $vitrineRepository): Response
     {
         return $this->render('vitrine/index.html.twig', [
-            'vitrines' => $vitrineRepository->findAll(),
+            'vitrines' => $vitrineRepository->orderByDesc(),
         ]);
     }
 

@@ -5,12 +5,11 @@
     <nav class='navlinks_container'>
         <a href="{{ path('app_home') }}" class="onglet">Accueil</a>
         <div class='submenu_container'>
-            <a href="{{ path('app_vitrines') }}" class='submenu-title onglet'>Vitrines</a>
+            <a href="{{ path('app_vitrines', {'new' : 'toutes-les-vitrines'}) }}" class='submenu-title onglet'>Vitrines</a>
 
             <div class='submenu'>
-                <a href="{{ path('app_new_vitrines') }}" class="onglet">Nouveautés</a>
                 <a href="{{ path('app_personalization_vitrines') }}" class="onglet">Personnalisation</a>
-                <a href="{{ path('app_vitrines') }}" class="onglet">Toutes les vitrines</a>
+                <a href="{{ path('app_vitrines', {'new' : 'toutes-les-vitrines'}) }}" class="onglet">Toutes les vitrines</a>
             </div>
         </div>
         <a href="{{ path('app_expositions') }}" class="onglet">Exposition</a>
@@ -32,7 +31,7 @@
 </div>
 <div class="modal hidden">
     <a href="{{ path('app_home') }}" class="onglet">Accueil</a>
-    <a href="{{ path('app_vitrines') }}" class="onglet">Vitrines</a>
+    <a href="{{ path('app_vitrines', {'new' : 'toutes-les-vitrines'}) }}" class="onglet">Vitrines</a>
     <a href="{{ path('app_personalization_vitrines') }}" class="onglet">Personnalisation</a>
     <a href="{{ path('app_expositions') }}" class="onglet">Exposition</a>
     <a href="{{ path('app_contact') }}" class="onglet">Contact</a>

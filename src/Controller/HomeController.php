@@ -2,22 +2,23 @@
 
 namespace App\Controller;
 
-use App\Data\SearchData;
-use App\Entity\Contact;
 use App\Entity\Mail;
-use App\Entity\Vitrine;
-use App\Form\ContactType;
 use App\Form\MailType;
+use App\Entity\Contact;
+use App\Entity\Vitrine;
+use App\Data\SearchData;
 use App\Form\SearchType;
-use App\Repository\ContactRepository;
+use App\Form\ContactType;
 use App\Repository\MailRepository;
+use App\Repository\ContactRepository;
 use App\Repository\VitrineRepository;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 
 class HomeController extends AbstractController
 {
@@ -33,16 +34,20 @@ class HomeController extends AbstractController
 
             $email = (new TemplatedEmail())
                 ->from($mail->getMail())
-                ->to('laurine.mencias@gmail.com')
+                ->to('contact@lavitrinedevalerie.fr')
                 ->htmlTemplate('emails/emailNewsletter.html.twig')
                 ;
 
-            $mailer->send($email);
+            try{
+                $mailer->send($email);
+                $this->addFlash(
+                    'success',
+                    'Votre adresse mail a bien été enregistrée merci !'
+                );
+            } catch (TransportExceptionInterface $e){
+                $e;
+            }
 
-            $this->addFlash(
-                'success',
-                'Votre adresse mail a bien été enregistrée !'
-            );
 
             return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER);
         }
@@ -52,28 +57,18 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/vitrines', name: 'app_vitrines')]
-    public function allVitrines(VitrineRepository $repository, Request $request): Response
+    #[Route('/vitrines/{new}', name: 'app_vitrines')]
+    public function allVitrines(VitrineRepository $repository, Request $request, $new): Response
     {
+        $numberArticles = 9;
         $data = new SearchData();
+        if($new === 'nouveautes'){
+            $data->new = true;
+        }
         $data->page = $request->get('page', 1);
         $form = $this->createForm(SearchType::class, $data);
         $form->handleRequest($request);
-        $listeVitrines = $repository->findSearch($data);
-        return $this->render('home/vitrines.html.twig', [
-            'vitrines' => $listeVitrines,
-            'form' => $form
-        ]);
-    }
-
-    #[Route('/nouveautes', name: 'app_new_vitrines')]
-    public function newVitrines(VitrineRepository $repository, Request $request): Response
-    {
-        $data = new SearchData();
-        $data->new = true;
-        $form = $this->createForm(SearchType::class, $data);
-        $form->handleRequest($request);
-        $listeVitrines = $repository->findSearch($data);
+        $listeVitrines = $repository->findSearch($data, $numberArticles);
         return $this->render('home/vitrines.html.twig', [
             'vitrines' => $listeVitrines,
             'form' => $form
